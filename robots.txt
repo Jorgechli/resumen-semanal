@@ -1,0 +1,4 @@
+# No indexar la encuesta ni cartas de clientes
+User-agent: *
+Disallow: /encuesta/
+Disallow: /carta/

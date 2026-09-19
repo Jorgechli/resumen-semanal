@@ -3,27 +3,32 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tu resumen semanal del restaurante, por WhatsApp</title>
-<meta name="description" content="Mándame tus ventas (caja, Rappi, PedidosYa, Yape) y cada lunes recibes por WhatsApp un resumen sencillo: qué subió, qué bajó, cuándo vendes más y 3 acciones. El primero es gratis.">
+<title>Resumen Semanal — para restaurantes de Lima</title>
+<meta name="description" content="Kit digital para restaurantes de Lima: resumen semanal de ventas por WhatsApp, encuesta QR con informe de opiniones y carta virtual con pedidos por WhatsApp. El primer resumen es gratis.">
 <style>
-  :root{--azul:#1d4ed8;--azul2:#2563eb;--tinta:#0f172a;--gris:#475569;--fondo:#f8fafc;--linea:#e2e8f0;--verde:#16a34a}
+  :root{--azul:#1d4ed8;--azul2:#2563eb;--tinta:#0f172a;--gris:#475569;--fondo:#f8fafc;--linea:#e2e8f0;--verde:#16a34a;--oro:#f59e0b}
   *{box-sizing:border-box} body{margin:0;font-family:-apple-system,Inter,Segoe UI,Helvetica,Arial,sans-serif;color:var(--tinta);background:#fff;line-height:1.55}
-  .wrap{max-width:980px;margin:0 auto;padding:0 20px}
-  header{padding:18px 0;border-bottom:1px solid var(--linea)} header .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+  header{padding:16px 0;border-bottom:1px solid var(--linea);position:sticky;top:0;background:#fff;z-index:5} header .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px}
   .marca{font-weight:800;letter-spacing:-.01em} .marca span{color:var(--azul)}
   .btn{display:inline-block;background:var(--verde);color:#fff;text-decoration:none;font-weight:700;padding:12px 20px;border-radius:12px;box-shadow:0 8px 24px rgba(22,163,74,.25)}
   .btn.sec{background:#fff;color:var(--azul);border:2px solid var(--azul);box-shadow:none}
-  .hero{padding:56px 0 30px} .hero h1{font-size:clamp(28px,5vw,44px);line-height:1.12;margin:0 0 14px;letter-spacing:-.02em}
-  .hero p.lead{font-size:18px;color:var(--gris);max-width:640px;margin:0 0 22px}
+  .hero{padding:52px 0 26px} .hero h1{font-size:clamp(28px,5vw,44px);line-height:1.12;margin:0 0 14px;letter-spacing:-.02em}
+  .hero p.lead{font-size:18px;color:var(--gris);max-width:680px;margin:0 0 22px}
   .gratis{display:inline-block;background:#fef3c7;color:#92400e;font-weight:700;border-radius:999px;padding:6px 12px;font-size:13px;margin-bottom:14px}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-  .card{border:1px solid var(--linea);border-radius:16px;padding:18px;background:var(--fondo)} .card b{display:block;font-size:17px;margin-bottom:6px}
-  .paso{font-size:13px;color:var(--azul);font-weight:800;letter-spacing:.06em;text-transform:uppercase}
-  section{padding:34px 0} h2{font-size:26px;margin:0 0 16px;letter-spacing:-.01em}
+  section{padding:34px 0} h2{font-size:26px;margin:0 0 6px;letter-spacing:-.01em} .sub{color:var(--gris);margin:0 0 18px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+  .card{border:1px solid var(--linea);border-radius:16px;padding:20px;background:var(--fondo);display:flex;flex-direction:column}
+  .card .tag{font-size:12px;color:var(--azul);font-weight:800;letter-spacing:.06em;text-transform:uppercase} .card h3{margin:6px 0 6px;font-size:19px} .card p{margin:0 0 10px;color:var(--gris);font-size:15px}
+  .card ul{margin:0 0 12px;padding-left:18px;color:var(--gris);font-size:14px} .card li{margin:3px 0}
+  .precio{font-size:22px;font-weight:800;color:var(--azul);margin-top:auto} .precio small{font-size:13px;color:var(--gris);font-weight:600}
+  .demo{font-size:13px;margin-top:8px} .demo a{color:var(--azul);font-weight:700}
+  .paq{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+  .p{border:2px solid var(--linea);border-radius:18px;padding:22px;background:#fff} .p.top{border-color:var(--azul);position:relative} .p.top::before{content:"El más pedido";position:absolute;top:-12px;left:18px;background:var(--azul);color:#fff;font-size:12px;font-weight:800;padding:3px 10px;border-radius:999px}
+  .p .n{font-size:32px;font-weight:800;color:var(--azul)} .p .n small{font-size:14px;color:var(--gris)} .p .t{font-weight:800;font-size:18px;margin:4px 0} .p ul{padding-left:18px;color:var(--gris);font-size:14px;margin:8px 0 0}
+  .nota{background:#eff6ff;border:1px solid #bfdbfe;border-radius:14px;padding:16px 18px;margin-top:18px;color:#1e3a8a;font-size:15px}
+  .dos{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
   .captura{border:1px solid var(--linea);border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(15,23,42,.12)} .captura img{display:block;width:100%}
-  .precios{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
-  .precio{border:2px solid var(--linea);border-radius:16px;padding:22px} .precio.top{border-color:var(--azul)} .precio .n{font-size:32px;font-weight:800;color:var(--azul)} .precio small{color:var(--gris)}
-  ul{padding-left:20px} li{margin:6px 0}
   .faq details{border-bottom:1px solid var(--linea);padding:10px 0} summary{font-weight:700;cursor:pointer}
   footer{padding:30px 0;color:var(--gris);font-size:13px;border-top:1px solid var(--linea)}
   .flotante{position:fixed;right:16px;bottom:16px;z-index:9}
@@ -35,47 +40,73 @@
 
 <section class="hero"><div class="wrap">
   <div class="gratis">El primer resumen es GRATIS, con tus datos reales</div>
-  <h1>Tu resumen semanal del restaurante, por WhatsApp</h1>
-  <p class="lead">Mándame tus ventas (el Excel de tu caja, el export de Rappi o PedidosYa, el reporte de Yape). Cada lunes recibes un PDF sencillo: <b>qué subió, qué bajó, cuándo vendes más y las 3 cosas que deberías hacer esta semana</b>. No cambias de sistema ni instalas nada.</p>
+  <h1>Tu restaurante, bajo control: ventas, opiniones y pedidos, sin instalar nada</h1>
+  <p class="lead">Un kit digital para restaurantes de Lima, presenciales o solo delivery: cada lunes recibes por WhatsApp un <b>resumen sencillo de tus ventas</b> con 3 acciones para esa semana; tus clientes te califican con un <b>QR en la mesa</b>; y tu <b>carta virtual</b> recibe pedidos directo a tu WhatsApp. Sin cambiar de sistema, sin contrato, pago por Yape.</p>
   <a class="btn" href="https://wa.me/51956849763?text=Hola%20Jorge%2C%20quiero%20mi%20resumen%20semanal%20gratis" target="_blank">Quiero mi resumen gratis</a>
   &nbsp; <a class="btn sec" href="reporte-demo.pdf" target="_blank">Ver un resumen de ejemplo (PDF)</a>
 </div></section>
 
-<section><div class="wrap">
-  <h2>Cómo funciona</h2>
+<section id="modulos"><div class="wrap">
+  <h2>Los cuatro módulos (elige uno o júntalos)</h2>
+  <p class="sub">Cada módulo funciona solo. Juntos se potencian: las ventas te dicen qué pasó, las opiniones te dicen por qué, y la carta te trae más pedidos.</p>
   <div class="grid">
-    <div class="card"><div class="paso">Paso 1</div><b>Me mandas tus ventas</b>El Excel de tu caja, el export de PedidosYa o Rappi Partners, el reporte de Yape Empresa. Nunca claves ni accesos. Si llevas cuaderno, te paso una plantilla facilita.</div>
-    <div class="card"><div class="paso">Paso 2</div><b>Junto todo y lo reviso</b>Caja + Rappi + PedidosYa + Yape en un solo resumen: ventas vs la semana anterior, por canal, productos que suben y bajan, días y horas fuertes, ticket promedio, cancelaciones y proyección del mes.</div>
-    <div class="card"><div class="paso">Paso 3</div><b>Cada lunes, el PDF por WhatsApp</b>Con gráficos, alertas y 3 acciones concretas para esa semana. Lo lees en 3 minutos.</div>
+    <div class="card"><div class="tag">Módulo 1</div><h3>Resumen semanal de ventas</h3><p>Me mandas el Excel de tu caja o el export de Rappi/PedidosYa/Yape. Cada lunes, un PDF por WhatsApp.</p>
+      <ul><li>Ventas vs. semana anterior y por canal</li><li>Productos que suben y bajan</li><li>Días y horas fuertes, ticket promedio, cancelaciones</li><li>3 acciones concretas para la semana</li></ul>
+      <div class="precio">S/ 99 <small>/ mes (1 fuente)</small> · S/ 179 <small>/ mes (varias fuentes o 2+ locales)</small></div><div class="demo"><a href="reporte-demo.pdf" target="_blank">Ver ejemplo →</a></div></div>
+    <div class="card"><div class="tag">Módulo 2</div><h3>Encuesta QR + informe de opiniones</h3><p>Un cartel con QR en la mesa o en la caja. El cliente califica en 30 segundos desde su celular. Cada mes recibes el informe: notas, comentarios y qué mejorar primero.</p>
+      <ul><li>Calificación general, comida, atención y tiempo de espera</li><li>Comentarios textuales y alertas de caída</li><li>Opción de dejar WhatsApp para responderle</li><li>Cartel A5 listo para imprimir</li></ul>
+      <div class="precio">S/ 79 <small>instalación única</small> + S/ 49 <small>/ mes con informe mensual</small></div><div class="demo"><a href="encuesta/?r=demo&n=Restaurante%20Demo" target="_blank">Probar la encuesta →</a></div></div>
+    <div class="card"><div class="tag">Módulo 3</div><h3>Carta virtual con pedidos por WhatsApp</h3><p>Tu carta en una página con QR. El cliente elige, suma y el pedido le llega a tu WhatsApp ya escrito. Cambios de precio o platos agotados el mismo día.</p>
+      <ul><li>Categorías, descripciones y precios</li><li>Botón "Pedir por WhatsApp" con el pedido armado</li><li>Sin comisiones por pedido</li><li>QR para mesa, delivery e Instagram</li></ul>
+      <div class="precio">S/ 149 <small>instalación única</small> + S/ 29 <small>/ mes (cambios ilimitados)</small></div><div class="demo"><a href="carta/demo/" target="_blank">Ver la carta demo →</a></div></div>
+    <div class="card"><div class="tag">Módulo 4 · a cotizar</div><h3>Asistente que atiende llamadas y toma pedidos</h3><p>Una voz natural que contesta tu número, toma el pedido, pregunta recojo o delivery y lo confirma por WhatsApp. Varias llamadas a la vez en hora punta.</p>
+      <ul><li>Para restaurantes con más de 50 pedidos al día</li><li>Instalación y prueba con tu carta real</li><li>Costo de plataforma incluido</li></ul>
+      <div class="precio">desde S/ 449 <small>/ mes + instalación</small></div><div class="demo">Se activa cuando tu volumen lo justifique; te lo cotizo con tus números.</div></div>
+  </div>
+</div></section>
+
+<section id="paquetes" style="background:var(--fondo)"><div class="wrap">
+  <h2>Paquetes (dos tallas, según cuánta gente tiene tu restaurante)</h2>
+  <p class="sub">Restaurante <b>pequeño</b>: hasta ~40 pedidos al día o un solo local. Restaurante <b>con mucha gente</b>: más de 40 pedidos al día, varios canales o 2+ locales.</p>
+  <div class="paq">
+    <div class="p top"><div class="n">S/ 199 <small>/ mes</small></div><div class="t">Kit Pequeño · ventas + opiniones + carta</div>
+      <ul><li>Resumen semanal (1 fuente)</li><li>Encuesta QR con informe mensual</li><li>Carta virtual con cambios ilimitados</li><li>Instalación de todo: S/ 149 (en vez de S/ 228)</li></ul>
+      <p style="margin:10px 0 0;color:var(--gris);font-size:14px">Por separado costaría S/ 177/mes + S/ 228 de instalación.</p></div>
+    <div class="p"><div class="n">S/ 299 <small>/ mes</small></div><div class="t">Kit Con Mucha Gente · todo, multi-canal</div>
+      <ul><li>Resumen completo (caja + Rappi + PedidosYa + Yape, 2+ locales)</li><li>Encuesta QR con informe quincenal</li><li>Carta virtual + QR por local</li><li>Instalación de todo: S/ 199</li><li>Prioridad para el módulo 4 (asistente de voz)</li></ul></div>
+  </div>
+  <div class="nota"><b>Arranque justo:</b> el primer resumen es gratis y, si contratas un kit, el primer mes tiene <b>30 % de descuento</b> (S/ 139 el Kit Pequeño). Sin contrato: cancelas cuando quieras. <b>Regla de crecimiento:</b> a los 3 meses revisamos juntos tus ventas; si subieron, el plan se ajusta al precio normal; si no, se queda como está. Ganamos si tú ganas.</div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>¿Y si no tengo Excel?</h2>
+  <p class="sub">No hace falta un sistema. Tres caminos, del más simple al más completo:</p>
+  <div class="grid">
+    <div class="card"><h3>1. Foto del cuaderno</h3><p>Le sacas foto a tu cuaderno de ventas del día y me la mandas. Yo la paso a números. Sirve para empezar.</p></div>
+    <div class="card"><h3>2. Plantilla en el celular</h3><p>Te doy una hoja simple (Excel o Google Sheets): fecha, producto, cantidad, precio. La llena quien atiende la caja en 10 segundos por venta.</p></div>
+    <div class="card"><h3>3. Exportar de tus apps</h3><p>PedidosYa Partners exporta a Excel; Rappi Partners descarga la relación de ventas; Yape Empresa tiene reporte de ventas. Si tienes caja (Rest.pe, Bsale, Toteat, Fudo), exportan a Excel.</p></div>
   </div>
 </div></section>
 
 <section><div class="wrap">
   <h2>Así se ve</h2>
-  <video src="demo-45s.mp4" controls muted playsinline style="width:100%;max-width:420px;border-radius:16px;display:block;margin:0 auto 18px;box-shadow:0 20px 60px rgba(15,23,42,.15)"></video>
-  <div class="captura"><img src="captura-reporte.png" alt="Ejemplo del reporte de ventas: indicadores, acciones de la semana, ventas por día, día de la semana y top de productos"></div>
-</div></section>
-
-<section><div class="wrap">
-  <h2>Precios</h2>
-  <div class="precios">
-    <div class="precio"><div class="n">S/ 99 <small>/ mes</small></div><b>Resumen semanal</b><br><small>Una fuente de datos (tu caja o una app). Cada lunes por WhatsApp, con alertas y 3 acciones.</small></div>
-    <div class="precio top"><div class="n">S/ 179 <small>/ mes</small></div><b>Resumen completo</b><br><small>Varias fuentes en un solo resumen (caja + Rappi + PedidosYa + Yape) o 2+ locales. Comparación por canal.</small></div>
-    <div class="precio"><div class="n">S/ 150–300</div><b>Ordenar tus datos</b><br><small>Ordeno tu Excel desordenado y te dejo una plantilla que se llena sola. Pago único.</small></div>
+  <div class="dos">
+    <div><video src="demo-45s.mp4" controls muted playsinline style="width:100%;max-width:420px;border-radius:16px;display:block;margin:0 auto 12px;box-shadow:0 20px 60px rgba(15,23,42,.15)"></video></div>
+    <div class="captura"><img src="captura-reporte.png" alt="Ejemplo del resumen semanal: indicadores, alertas, ventas por día y por canal, top de productos"></div>
   </div>
-  <p style="color:var(--gris);margin-top:12px">Sin instalación, sin contrato, sin hardware. Pago por Yape o Plin. El primer resumen es gratis con tus datos reales; si no te sirve, no sigues.</p>
 </div></section>
 
 <section class="faq"><div class="wrap">
   <h2>Preguntas frecuentes</h2>
-  <details><summary>¿Qué necesito para empezar?</summary>Solo tus ventas: el Excel de tu caja, el export de PedidosYa Partners (menú Ventas → Excel), la relación de ventas de Rappi Partners o el reporte de Yape Empresa. O la plantilla que te paso.</details>
-  <details><summary>¿Mis datos están seguros?</summary>Sí. Nunca te pido claves ni accesos: solo el archivo. Lo uso solo para tu resumen, no se comparte con nadie y lo borro cuando me lo pidas.</details>
-  <details><summary>¿Es contabilidad o algo de la SUNAT?</summary>No. Es análisis de ventas para decidir mejor: qué comprar, qué promocionar, qué días y horas reforzar.</details>
-  <details><summary>¿Y si mis ventas están en un cuaderno?</summary>Te paso una plantilla de Excel o Google Sheets muy simple. Con una o dos semanas anotadas ya sale el primer reporte.</details>
-  <details><summary>¿Quién eres?</summary>Soy Jorge Chávez, estudiante de Ingeniería Industrial en la UPC (Lima). Uso herramientas de análisis de datos para que un negocio pequeño tenga la información que antes solo tenían las cadenas grandes.</details>
+  <details><summary>¿Tengo que instalar algo o cambiar de sistema?</summary>No. Todo funciona con lo que ya tienes: tu caja, tus apps de delivery, tu WhatsApp. Los QR se imprimen y listo.</details>
+  <details><summary>¿Mis datos y los de mis clientes están seguros?</summary>Sí. Nunca te pido claves ni accesos a tus sistemas: solo el archivo de ventas. Las opiniones de tus clientes son anónimas salvo que ellos dejen su WhatsApp, y solo tú las ves. No se comparten con nadie y se borran cuando lo pidas.</details>
+  <details><summary>¿Cobran comisión por pedido?</summary>No. Los pedidos por la carta virtual van directo a tu WhatsApp, sin intermediarios ni comisiones. Solo pagas el plan.</details>
+  <details><summary>¿Es contabilidad o algo de la SUNAT?</summary>No. Es información para decidir mejor: qué comprar, qué promocionar, qué días y horas reforzar, qué mejorar según tus clientes.</details>
+  <details><summary>¿Sirve si solo vendo por delivery (dark kitchen)?</summary>Sí, es de los casos donde más sirve: juntamos Rappi + PedidosYa + WhatsApp en un solo resumen y la encuesta va por el enlace en el empaque o en el mensaje de entrega.</details>
+  <details><summary>¿Quién está detrás?</summary>Jorge Chávez, estudiante de Ingeniería Industrial en la UPC (Lima). Uso herramientas de análisis de datos para que un restaurante pequeño tenga la información que antes solo tenían las cadenas grandes. Escríbeme por WhatsApp: respondo yo.</details>
 </div></section>
 
-<footer><div class="wrap">Resumen·Semanal — Lima, Perú · <a href="https://wa.me/51956849763?text=Hola%20Jorge%2C%20quiero%20mi%20resumen%20semanal%20gratis">WhatsApp</a> · Hecho por Jorge Chávez</div></footer>
+<footer><div class="wrap">Resumen·Semanal — Lima, Perú · <a href="https://wa.me/51956849763">WhatsApp +51 956 849 763</a> · Hecho por Jorge Chávez</div></footer>
 <a class="btn flotante" href="https://wa.me/51956849763?text=Hola%20Jorge%2C%20quiero%20mi%20resumen%20semanal%20gratis" target="_blank">💬 WhatsApp</a>
 </body>
 </html>

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>¿Cómo estuvo tu visita?</title>
+<style>
+  :root{--azul:#1d4ed8;--tinta:#0f172a;--gris:#64748b;--linea:#e2e8f0;--verde:#16a34a;--oro:#f59e0b}
+  *{box-sizing:border-box} body{margin:0;font-family:-apple-system,Inter,Segoe UI,Helvetica,Arial,sans-serif;background:#f8fafc;color:var(--tinta);line-height:1.5}
+  .wrap{max-width:480px;margin:0 auto;padding:24px 18px 40px}
+  h1{font-size:24px;margin:0 0 4px;letter-spacing:-.01em} .sub{color:var(--gris);margin:0 0 18px}
+  .rest{font-weight:800;color:var(--azul)}
+  .bloque{background:#fff;border:1px solid var(--linea);border-radius:16px;padding:14px 16px;margin-bottom:12px}
+  .bloque label{display:block;font-weight:700;margin-bottom:8px}
+  .estrellas{display:flex;gap:6px} .estrellas button{flex:1;font-size:30px;line-height:1;background:none;border:0;cursor:pointer;color:#cbd5e1;padding:6px 0;transition:transform .1s}
+  .estrellas button.on{color:var(--oro)} .estrellas button:active{transform:scale(1.15)}
+  textarea,input{width:100%;border:1px solid var(--linea);border-radius:10px;padding:10px;font:inherit}
+  textarea{min-height:80px;resize:vertical}
+  .btn{display:block;width:100%;background:var(--verde);color:#fff;border:0;border-radius:12px;padding:14px;font-weight:800;font-size:17px;cursor:pointer;margin-top:6px}
+  .btn[disabled]{opacity:.5;cursor:default}
+  .gracias{display:none;text-align:center;padding:40px 10px} .gracias h2{font-size:26px;margin:0 0 8px}
+  .gracias a{display:inline-block;margin-top:14px;background:var(--azul);color:#fff;text-decoration:none;padding:12px 18px;border-radius:12px;font-weight:700}
+  .pie{color:var(--gris);font-size:12px;text-align:center;margin-top:16px}
+  .err{color:#b91c1c;font-size:13px;display:none;margin:6px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <form id="f">
+    <h1>¿Cómo estuvo tu visita?</h1>
+    <p class="sub">Tu opinión llega directo al dueño de <span class="rest" id="nombre">este restaurante</span>. Te toma 30 segundos.</p>
+
+    <div class="bloque"><label>En general, ¿cómo calificarías tu experiencia?</label><div class="estrellas" data-campo="experiencia"></div></div>
+    <div class="bloque"><label>La comida</label><div class="estrellas" data-campo="comida"></div></div>
+    <div class="bloque"><label>La atención del personal</label><div class="estrellas" data-campo="atencion"></div></div>
+    <div class="bloque"><label>El tiempo de espera</label><div class="estrellas" data-campo="tiempo"></div></div>
+    <div class="bloque"><label>¿Qué mejorarías? <small style="font-weight:400;color:var(--gris)">(opcional)</small></label><textarea id="mejora" placeholder="Cuéntanos con confianza…"></textarea></div>
+    <div class="bloque"><label>Tu WhatsApp <small style="font-weight:400;color:var(--gris)">(opcional, solo si quieres que te respondan)</small></label><input id="wsp" inputmode="tel" placeholder="9xx xxx xxx"></div>
+    <div style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true"><label>Sitio web<input id="web" tabindex="-1" autocomplete="off"></label></div>
+    <p class="err" id="err">Marca al menos la calificación general (las estrellas de arriba).</p>
+    <button class="btn" id="enviar" type="submit">Enviar opinión</button>
+    <p class="pie">Anónimo salvo que dejes tu WhatsApp. No recibirás publicidad.</p>
+  </form>
+
+  <div class="gracias" id="gracias">
+    <div style="font-size:54px">🙌</div>
+    <h2>¡Gracias!</h2>
+    <p>Tu opinión ya le llegó al dueño. Nos ayuda a mejorar de verdad.</p>
+    <a id="resena" href="#" target="_blank" style="display:none">Déjanos también una reseña en Google ⭐</a>
+  </div>
+</div>
+
+<!-- El envío va a un formulario de Google (gratis, sin límite); esta página solo lo viste con estrellas. -->
+<iframe name="silencio" style="display:none"></iframe>
+<form id="gform" action="https://docs.google.com/forms/d/e/1FAIpQLScMcvhYeHI6DxhDrgVdWxoGLgNGPblNTbkvCMzEGflo_nRbiQ/formResponse" method="POST" target="silencio" style="display:none">
+  <input name="entry.1160301959" id="g_rest">
+  <input name="entry.1932302989" id="g_exp">
+  <input name="entry.2121114849" id="g_com">
+  <input name="entry.1363833212" id="g_ate">
+  <input name="entry.503535681" id="g_tie">
+  <input name="entry.530841860" id="g_mej">
+  <input name="entry.1016915236" id="g_wsp">
+  <input name="fvv" value="1"><input name="pageHistory" value="0">
+</form>
+
+<script>
+  const q = new URLSearchParams(location.search);
+  const rest = ((q.get('r') || 'demo').toLowerCase().replace(/[^a-z0-9-]/g, '') || 'demo').slice(0, 60);
+  const nombreBonito = (q.get('n') || rest.replace(/[-_]+/g, ' ')).replace(/[<>]/g, '').slice(0, 60);
+  document.getElementById('nombre').textContent = nombreBonito;
+  document.title = 'Tu opinión — ' + nombreBonito;
+  let resena = q.get('g');   // enlace de reseña de Google (opcional): solo dominios de Google
+  if (resena && !/^https:\/\/(g\.page|search\.google\.com|maps\.app\.goo\.gl|www\.google\.com|goo\.gl)\//.test(resena)) resena = null;
+  if (resena) { const a = document.getElementById('resena'); a.href = resena; a.style.display = 'inline-block'; }
+
+  const valores = {};
+  document.querySelectorAll('.estrellas').forEach(c => {
+    const campo = c.dataset.campo;
+    for (let i = 1; i <= 5; i++) {
+      const b = document.createElement('button'); b.type = 'button'; b.textContent = '★'; b.setAttribute('aria-label', i + ' de 5');
+      b.onclick = () => { valores[campo] = i; [...c.children].forEach((x, k) => x.classList.toggle('on', k < i)); };
+      c.appendChild(b);
+    }
+  });
+  document.getElementById('f').onsubmit = e => {
+    e.preventDefault();
+    if (!valores.experiencia) { document.getElementById('err').style.display = 'block'; return; }
+    document.getElementById('enviar').disabled = true;
+    const listo = () => { document.getElementById('f').style.display = 'none'; document.getElementById('gracias').style.display = 'block'; window.scrollTo(0, 0); };
+    const llave = 'op_' + rest; let reciente = false;
+    try { reciente = (Date.now() - (+localStorage.getItem(llave) || 0)) < 6 * 3600e3; } catch (e) {}
+    if (document.getElementById('web').value || reciente) { listo(); return; }
+    try { localStorage.setItem(llave, String(Date.now())); } catch (e) {}
+    document.getElementById('g_rest').value = rest;
+    document.getElementById('g_exp').value = valores.experiencia;
+    document.getElementById('g_com').value = valores.comida || '';
+    document.getElementById('g_ate').value = valores.atencion || '';
+    document.getElementById('g_tie').value = valores.tiempo || '';
+    document.getElementById('g_mej').value = document.getElementById('mejora').value.trim().slice(0, 1000);
+    document.getElementById('g_wsp').value = document.getElementById('wsp').value.trim().slice(0, 20);
+    const datos = new URLSearchParams(new FormData(document.getElementById('gform')));
+    // Envío directo (no-cors: Google no responde nada legible, pero guarda). Si falla, plan B por iframe.
+    fetch(document.getElementById('gform').action, { method: 'POST', mode: 'no-cors', body: datos })
+      .then(listo)
+      .catch(() => { document.getElementById('gform').submit(); setTimeout(listo, 800); });
+  };
+</script>
+</body>
+</html>
