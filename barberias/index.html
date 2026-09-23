@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reservas y opiniones para tu barbería — Lima</title>
+<meta name="description" content="Para barberías y peluquerías de Lima: reservas por WhatsApp con día y hora, QR para que tus clientes te califiquen, y tu resumen de ventas cada semana. Sin comisiones y sin apps que instalar.">
+<style>
+  :root{--azul:#1d4ed8;--tinta:#0f172a;--gris:#475569;--fondo:#f8fafc;--linea:#e2e8f0;--verde:#16a34a;--oro:#f59e0b}
+  *{box-sizing:border-box} body{margin:0;font-family:-apple-system,Inter,Segoe UI,Helvetica,Arial,sans-serif;color:var(--tinta);background:#fff;line-height:1.55}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+  header{padding:16px 0;border-bottom:1px solid var(--linea);position:sticky;top:0;background:#fff;z-index:5} header .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px}
+  .marca{font-weight:800;letter-spacing:-.01em} .marca span{color:var(--azul)}
+  .btn{display:inline-block;background:var(--verde);color:#fff;text-decoration:none;font-weight:700;padding:12px 20px;border-radius:12px;box-shadow:0 8px 24px rgba(22,163,74,.25)}
+  .btn.sec{background:#fff;color:var(--azul);border:2px solid var(--azul);box-shadow:none}
+  .hero{padding:52px 0 26px} .hero h1{font-size:clamp(28px,5vw,44px);line-height:1.12;margin:0 0 14px;letter-spacing:-.02em}
+  .hero p.lead{font-size:18px;color:var(--gris);max-width:680px;margin:0 0 22px}
+  .gratis{display:inline-block;background:#fef3c7;color:#92400e;font-weight:700;border-radius:999px;padding:6px 12px;font-size:13px;margin-bottom:14px}
+  section{padding:34px 0} h2{font-size:26px;margin:0 0 6px;letter-spacing:-.01em} .sub{color:var(--gris);margin:0 0 18px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+  .card{border:1px solid var(--linea);border-radius:16px;padding:20px;background:var(--fondo);display:flex;flex-direction:column}
+  .card .tag{font-size:12px;color:var(--azul);font-weight:800;letter-spacing:.06em;text-transform:uppercase} .card h3{margin:6px 0 6px;font-size:19px} .card p{margin:0 0 10px;color:var(--gris);font-size:15px}
+  .card ul{margin:0 0 12px;padding-left:18px;color:var(--gris);font-size:14px} .card li{margin:3px 0}
+  .precio{font-size:22px;font-weight:800;color:var(--azul);margin-top:auto} .precio small{font-size:13px;color:var(--gris);font-weight:600}
+  .demo{font-size:13px;margin-top:8px} .demo a{color:var(--azul);font-weight:700}
+  .paq{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+  .p{border:2px solid var(--linea);border-radius:18px;padding:22px;background:#fff} .p.top{border-color:var(--azul);position:relative} .p.top::before{content:"El más pedido";position:absolute;top:-12px;left:18px;background:var(--azul);color:#fff;font-size:12px;font-weight:800;padding:3px 10px;border-radius:999px}
+  .p .n{font-size:32px;font-weight:800;color:var(--azul)} .p .n small{font-size:14px;color:var(--gris)} .p .t{font-weight:800;font-size:18px;margin:4px 0} .p ul{padding-left:18px;color:var(--gris);font-size:14px;margin:8px 0 0}
+  .nota{background:#eff6ff;border:1px solid #bfdbfe;border-radius:14px;padding:16px 18px;margin-top:18px;color:#1e3a8a;font-size:15px}
+  .comp{width:100%;border-collapse:collapse;font-size:15px} .comp th,.comp td{padding:10px 8px;border-bottom:1px solid var(--linea);text-align:left} .comp th{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--gris)} .comp td.si{color:var(--verde);font-weight:700}
+  .faq details{border-bottom:1px solid var(--linea);padding:10px 0} summary{font-weight:700;cursor:pointer}
+  footer{padding:30px 0;color:var(--gris);font-size:13px;border-top:1px solid var(--linea)}
+  .flotante{position:fixed;right:16px;bottom:16px;z-index:9}
+  .tabla-caja{overflow-x:auto}
+  @media (max-width:600px){.hero{padding:34px 0 20px} header .btn{padding:8px 12px;font-size:13px;border-radius:10px} body{padding-bottom:72px} .btn.sec{margin-top:10px}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="marca">Tu Barbería<span> ·</span> Digital</div><a class="btn" href="https://wa.me/51956849763?text=Hola%20Jorge%2C%20tengo%20una%20barber%C3%ADa%20y%20quiero%20ver%20la%20demo" target="_blank">Quiero verlo</a></div></header>
+
+<section class="hero"><div class="wrap">
+  <div class="gratis">Instalación de prueba GRATIS por 30 días · si no te sirve, se apaga</div>
+  <h1>Que tus clientes reserven solos, y que todos te dejen su opinión</h1>
+  <p class="lead">Tu barbería con <b>página de servicios y reserva por WhatsApp</b>: el cliente elige el servicio, el día, la hora y con qué barbero, y te llega todo escrito a tu WhatsApp. Más un <b>QR en el espejo</b> para que te califiquen y te dejen reseña en Google. Y cada semana, <b>cuánto vendiste y qué servicio se movió</b>. Sin comisiones por cliente y sin instalar ninguna app.</p>
+  <a class="btn" href="https://wa.me/51956849763?text=Hola%20Jorge%2C%20tengo%20una%20barber%C3%ADa%20y%20quiero%20probar%20los%2030%20d%C3%ADas%20gratis" target="_blank">Probar 30 días gratis</a>
+  &nbsp; <a class="btn sec" href="../carta/barberia-demo/" target="_blank">Ver una barbería de ejemplo</a>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Los módulos (elige uno o júntalos)</h2>
+  <p class="sub">Todo funciona con lo que ya tienes: tu WhatsApp y tu celular. Nada que instalar, ni para ti ni para tus clientes.</p>
+  <div class="grid">
+    <div class="card"><div class="tag">Módulo 1</div><h3>Reserva por WhatsApp</h3><p>Tu página de servicios con precios y duración. El cliente arma su cita y te llega el mensaje listo: servicio, día, hora, barbero y su nombre.</p>
+      <ul><li>Días de la semana, saltando tus días cerrados</li><li>Horas dentro de tu horario</li><li>Elegir barbero (o el que esté libre)</li><li>Sin comisiones por cliente ni por reserva</li></ul>
+      <div class="precio">S/ 149 <small>instalación</small> + S/ 29 <small>/ mes (cambios ilimitados)</small></div>
+      <div class="demo"><a href="../carta/barberia-demo/" target="_blank">Probar la reserva →</a></div></div>
+    <div class="card"><div class="tag">Módulo 2</div><h3>QR de opiniones + reseñas en Google</h3><p>Un cartel con QR en el espejo o en la caja. Te califican en 30 segundos y, si quedaron contentos, les aparece el enlace para dejarte reseña en Google.</p>
+      <ul><li>Corte, atención del barbero y tiempo de espera</li><li>Comentarios escritos y aviso si una nota baja</li><li>Informe cada mes con qué mejorar primero</li><li>Cartel A5 listo para imprimir</li></ul>
+      <div class="precio">S/ 79 <small>instalación</small> + S/ 49 <small>/ mes con informe</small></div>
+      <div class="demo"><a href="../encuesta/?r=demo&n=Barber%C3%ADa%20Demo&t=b" target="_blank">Probar la encuesta →</a></div></div>
+    <div class="card"><div class="tag">Módulo 3</div><h3>Tu resumen de ventas cada semana</h3><p>Me mandas lo que cobraste (Excel, la app de tu caja o una foto del cuaderno). Cada semana recibes por WhatsApp qué subió, qué bajó y 3 cosas para hacer.</p>
+      <ul><li>Servicios que más y menos se piden</li><li>Días y horas fuertes (para saber cuándo reforzar)</li><li>Ticket promedio y comparación con la semana pasada</li><li>3 acciones concretas</li></ul>
+      <div class="precio">S/ 99 <small>/ mes</small></div>
+      <div class="demo"><a href="../barberia-reporte-demo.pdf" target="_blank">Ver un ejemplo →</a></div></div>
+    <div class="card"><div class="tag">Módulo 4</div><h3>Cuánto te deja cada servicio</h3><p>Pones una vez lo que te cuesta cada servicio (insumos y lo que se lleva el barbero). Cada mes te digo cuál conviene empujar y a cuál subirle el precio.</p>
+      <ul><li>Margen y aporte en soles, servicio por servicio</li><li>Mapa: ⭐ estrellas, 🐄 caballitos, ❓ promesas, 🐢 lastres</li><li>Precio sugerido cuando conviene subirlo</li><li>Necesita el módulo 3</li></ul>
+      <div class="precio">S/ 149 <small>armado</small> + S/ 49 <small>/ mes</small></div>
+      <div class="demo"><a href="../barberia-margen-demo.pdf" target="_blank">Ver un ejemplo →</a></div></div>
+  </div>
+</div></section>
+
+<section style="background:var(--fondo)"><div class="wrap">
+  <h2>Paquetes</h2>
+  <p class="sub">Barbería <b>de barrio</b>: 1 o 2 sillas. <b>Con movimiento</b>: 3 o más sillas, o más de un local.</p>
+  <div class="paq">
+    <div class="p top"><div class="n">S/ 139 <small>/ mes de lanzamiento</small></div><div class="t">Kit Barrio · reservas + opiniones + resumen</div>
+      <ul><li>Reserva por WhatsApp con cambios ilimitados</li><li>QR de opiniones con informe mensual</li><li>Resumen de ventas cada semana</li><li>Instalación de todo: S/ 149 (en vez de S/ 228)</li></ul>
+      <p style="margin:10px 0 0;color:var(--gris);font-size:14px">Precio normal S/ 169/mes. Por separado costaría S/ 177/mes.</p></div>
+    <div class="p"><div class="n">S/ 199 <small>/ mes de lanzamiento</small></div><div class="t">Kit Con Movimiento · todo, varios barberos</div>
+      <ul><li>Reserva con elección de barbero y por local</li><li>QR de opiniones con informe quincenal</li><li>Resumen de ventas + margen por servicio</li><li>Instalación de todo: S/ 199</li></ul>
+      <p style="margin:10px 0 0;color:var(--gris);font-size:14px">Precio normal S/ 249/mes. Por separado costaría S/ 326/mes.</p></div>
+  </div>
+  <div class="nota"><b>Prueba de 30 días, de verdad:</b> instalo tu página de reservas y tu QR sin que pagues nada. Si al mes no te sirvió, lo apago y no me debes nada. Si te sirvió, empiezas a pagar el plan que elijas. Sin contrato: cancelas cuando quieras.</div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>¿Y las apps de reservas que ya existen?</h2>
+  <p class="sub">Son buenas, pero cobran de otra forma. Compara antes de decidir:</p>
+  <div class="tabla-caja"><table class="comp">
+    <tr><th>&nbsp;</th><th>Otras plataformas</th><th>Esto</th></tr>
+    <tr><td>Lo que pagas</td><td>Suscripción por silla o por empleado, o comisión por cada cliente nuevo que te traen</td><td class="si">Un precio fijo al mes. Sin comisiones</td></tr>
+    <tr><td>Tus clientes</td><td>Quedan en la plataforma, que también los ofrece a otras barberías</td><td class="si">Van directo a tu WhatsApp. Son tuyos</td></tr>
+    <tr><td>Instalar</td><td>El cliente suele tener que bajarse una app o crear cuenta</td><td class="si">Escanea el QR y listo. Nada que bajar</td></tr>
+    <tr><td>Agenda automática</td><td>Sí, con disponibilidad en tiempo real</td><td>No: tú confirmas cada cita por WhatsApp (así ves quién viene)</td></tr>
+    <tr><td>Quién te atiende</td><td>Soporte por correo</td><td class="si">Yo, por WhatsApp, el mismo día</td></tr>
+  </table></div>
+  <p class="sub" style="margin-top:12px">Si lo que necesitas es una agenda con disponibilidad automática y ya facturas para pagarla, te conviene una de esas plataformas y te lo digo de frente. Esto es para la barbería que hoy anota en el cuaderno y coordina por WhatsApp.</p>
+</div></section>
+
+<section class="faq"><div class="wrap">
+  <h2>Preguntas frecuentes</h2>
+  <details><summary>¿Mis clientes tienen que bajar una app?</summary>No. Escanean el QR o tocan tu enlace de Instagram, eligen y te llega el WhatsApp. Nada más.</details>
+  <details><summary>¿Y si dos clientes piden la misma hora?</summary>Tú confirmas cada reserva, así que decides. No es una agenda automática: es tu WhatsApp ordenado. Si algún día necesitas agenda con disponibilidad en tiempo real, te lo digo y te recomiendo la herramienta.</details>
+  <details><summary>¿Puedo cambiar precios o servicios?</summary>Sí, las veces que quieras, sin costo extra en el plan mensual. Me escribes y queda en el día.</details>
+  <details><summary>No llevo Excel, anoto en un cuaderno.</summary>Perfecto. Mándame una foto del cuaderno cada semana y yo lo paso a números. Con eso sale tu resumen.</details>
+  <details><summary>¿Las opiniones son públicas?</summary>No. Solo las ves tú, en tu informe. Al que quedó contento se le ofrece dejar reseña en Google, que sí es pública y te trae clientes.</details>
+  <details><summary>¿Quién está detrás?</summary>Jorge Chávez, estudiante de Ingeniería Industrial en la UPC (Lima). Escríbeme por WhatsApp: respondo yo, no un robot.</details>
+</div></section>
+
+<footer><div class="wrap">Lima, Perú · <a href="https://wa.me/51956849763">WhatsApp +51 956 849 763</a> · Hecho por Jorge Chávez · <a href="../">¿Tienes un restaurante? Mira esto</a></div></footer>
+<a class="btn flotante" href="https://wa.me/51956849763?text=Hola%20Jorge%2C%20tengo%20una%20barber%C3%ADa%20y%20quiero%20probar%20los%2030%20d%C3%ADas%20gratis" target="_blank">💬 WhatsApp</a>
+</body>
+</html>

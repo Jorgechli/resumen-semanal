@@ -28,13 +28,13 @@
 <body>
 <div class="wrap">
   <form id="f">
-    <h1>¿Cómo estuvo tu visita?</h1>
-    <p class="sub">Tu opinión llega directo al dueño de <span class="rest" id="nombre">este restaurante</span>. Te toma 30 segundos.</p>
+    <h1 id="titulo">¿Cómo estuvo tu visita?</h1>
+    <p class="sub">Tu opinión llega directo al dueño de <span class="rest" id="nombre">este negocio</span>. Te toma 30 segundos.</p>
 
     <div class="bloque"><label>En general, ¿cómo calificarías tu experiencia?</label><div class="estrellas" data-campo="experiencia"></div></div>
-    <div class="bloque"><label>La comida</label><div class="estrellas" data-campo="comida"></div></div>
-    <div class="bloque"><label>La atención del personal</label><div class="estrellas" data-campo="atencion"></div></div>
-    <div class="bloque"><label>El tiempo de espera</label><div class="estrellas" data-campo="tiempo"></div></div>
+    <div class="bloque"><label id="lb-comida">La comida</label><div class="estrellas" data-campo="comida"></div></div>
+    <div class="bloque"><label id="lb-atencion">La atención del personal</label><div class="estrellas" data-campo="atencion"></div></div>
+    <div class="bloque"><label id="lb-tiempo">El tiempo de espera</label><div class="estrellas" data-campo="tiempo"></div></div>
     <div class="bloque"><label>¿Qué mejorarías? <small style="font-weight:400;color:var(--gris)">(opcional)</small></label><textarea id="mejora" placeholder="Cuéntanos con confianza…"></textarea></div>
     <div class="bloque"><label>Tu WhatsApp <small style="font-weight:400;color:var(--gris)">(opcional, solo si quieres que te respondan)</small></label><input id="wsp" inputmode="tel" placeholder="9xx xxx xxx"></div>
     <div style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true"><label>Sitio web<input id="web" tabindex="-1" autocomplete="off"></label></div>
@@ -70,6 +70,12 @@
   const nombreBonito = (q.get('n') || rest.replace(/[-_]+/g, ' ')).replace(/[<>]/g, '').slice(0, 60);
   document.getElementById('nombre').textContent = nombreBonito;
   document.title = 'Tu opinión — ' + nombreBonito;
+  if ((q.get('t') || '') === 'b') {
+    document.getElementById('titulo').textContent = '¿Cómo te fue hoy?';
+    document.getElementById('lb-comida').textContent = 'El corte o servicio';
+    document.getElementById('lb-atencion').textContent = 'La atención de tu barbero o estilista';
+    document.getElementById('lb-tiempo').textContent = 'El tiempo que esperaste';
+  }
   let resena = q.get('g');   // enlace de reseña de Google (opcional): solo dominios de Google
   if (resena && !/^https:\/\/(g\.page|search\.google\.com|maps\.app\.goo\.gl|www\.google\.com|goo\.gl)\//.test(resena)) resena = null;
   if (resena) { const a = document.getElementById('resena'); a.href = resena; a.style.display = 'inline-block'; }
