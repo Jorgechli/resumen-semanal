@@ -1,0 +1,20 @@
+{
+ "bodega-san-martin-demo": {
+  "resumen": false,
+  "encuesta": false,
+  "carta": false,
+  "margen": false
+ },
+ "barberia-el-corte-demo": {
+  "resumen": true,
+  "encuesta": false,
+  "carta": false,
+  "margen": false
+ },
+ "barberia-los-compadres": {
+  "resumen": true,
+  "encuesta": true,
+  "carta": false,
+  "margen": false
+ }
+}

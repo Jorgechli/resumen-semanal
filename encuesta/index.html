@@ -80,6 +80,16 @@
   if (resena && !/^https:\/\/(g\.page|search\.google\.com|maps\.app\.goo\.gl|www\.google\.com|goo\.gl)\//.test(resena)) resena = null;
   if (resena) { const a = document.getElementById('resena'); a.href = resena; a.style.display = 'inline-block'; }
 
+  // Interruptor a distancia: si Jorge apago este servicio, la encuesta se bloquea sola.
+  fetch('../estado.json?v=' + Date.now()).then(r => r.ok ? r.json() : null).then(e => {
+    const base = rest.replace(/-[0-9a-f]{6}$/, '');
+    const st = e && (e[rest] || e[base]);
+    if (st && st.encuesta === false) {
+      document.getElementById('suspendido').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+  }).catch(() => {});
+
   const valores = {};
   document.querySelectorAll('.estrellas').forEach(c => {
     const campo = c.dataset.campo;
@@ -112,5 +122,10 @@
       .catch(() => { document.getElementById('gform').submit(); setTimeout(listo, 800); });
   };
 </script>
+<div id="suspendido" style="display:none;position:fixed;inset:0;background:#0f172a;color:#fff;z-index:99;
+  align-items:center;justify-content:center;text-align:center;padding:30px;font-size:17px;line-height:1.6">
+  <div><div style="font-size:46px;margin-bottom:10px">🔒</div><b>Esta encuesta está suspendida temporalmente</b><br>
+  <span style="opacity:.8;font-size:15px">Si eres el dueño del negocio, escribe a Jorge por WhatsApp para reactivarla.</span><br>
+  <a href="https://wa.me/51956849763" style="display:inline-block;margin-top:14px;background:#16a34a;color:#fff;text-decoration:none;font-weight:700;padding:11px 18px;border-radius:12px">Escribir por WhatsApp</a></div></div>
 </body>
 </html>

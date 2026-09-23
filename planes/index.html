@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elige lo que quieres activar — Jorge Chávez</title>
+<meta name="description" content="Mira cada servicio funcionando de verdad, marca el que quieras y actívalo hoy. 30 días de prueba: si no te sirve, se apaga y no debes nada.">
+<style>
+  :root{--azul:#1d4ed8;--tinta:#0f172a;--gris:#475569;--fondo:#f8fafc;--linea:#e2e8f0;--verde:#16a34a;--oro:#f59e0b}
+  *{box-sizing:border-box} body{margin:0;font-family:-apple-system,Inter,Segoe UI,Helvetica,Arial,sans-serif;color:var(--tinta);background:#fff;line-height:1.55;padding-bottom:96px}
+  .wrap{max-width:980px;margin:0 auto;padding:0 20px}
+  header{padding:14px 0;border-bottom:1px solid var(--linea);position:sticky;top:0;background:#fff;z-index:6}
+  header .wrap{display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .marca{font-weight:800} .marca span{color:var(--azul)}
+  .hero{padding:40px 0 20px} h1{font-size:clamp(26px,4.6vw,38px);line-height:1.15;margin:0 0 12px;letter-spacing:-.02em}
+  .lead{font-size:17px;color:var(--gris);max-width:640px;margin:0 0 18px}
+  .sello{display:inline-block;background:#fef3c7;color:#92400e;font-weight:700;border-radius:999px;padding:6px 12px;font-size:13px;margin-bottom:12px}
+  section{padding:26px 0} h2{font-size:24px;margin:0 0 4px} .sub{color:var(--gris);margin:0 0 18px}
+  .mods{display:grid;gap:16px}
+  .mod{border:2px solid var(--linea);border-radius:18px;overflow:hidden;transition:border-color .15s}
+  .mod.on{border-color:var(--verde);background:#f0fdf4}
+  .mod .top{display:flex;gap:14px;padding:18px;align-items:flex-start;cursor:pointer}
+  .mod .ico{font-size:30px;line-height:1;flex:none}
+  .mod h3{margin:0 0 4px;font-size:19px} .mod p{margin:0 0 8px;color:var(--gris);font-size:15px}
+  .mod ul{margin:0;padding-left:18px;color:var(--gris);font-size:14px} .mod li{margin:2px 0}
+  .precio{font-weight:800;color:var(--azul);white-space:nowrap;text-align:right;flex:none}
+  .precio small{display:block;font-weight:600;color:var(--gris);font-size:12px}
+  .marca-check{width:26px;height:26px;border-radius:8px;border:2px solid var(--linea);flex:none;display:grid;place-items:center;font-weight:800;color:#fff;background:#fff}
+  .mod.on .marca-check{background:var(--verde);border-color:var(--verde)}
+  .verlo{background:var(--fondo);border-top:1px solid var(--linea);padding:14px 18px}
+  .verlo b{font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--gris)}
+  .capt{margin-top:10px;border:1px solid var(--linea);border-radius:12px;overflow:hidden;background:#fff}
+  .capt img{display:block;width:100%}
+  .verlo a{display:inline-block;margin-top:10px;color:var(--azul);font-weight:700;text-decoration:none;font-size:14px}
+  .form{background:var(--fondo);border:1px solid var(--linea);border-radius:18px;padding:20px;margin-top:10px}
+  label{display:block;font-size:12px;font-weight:700;color:var(--gris);margin-top:12px}
+  input,select,textarea{width:100%;margin-top:5px;padding:11px;border:1px solid var(--linea);border-radius:10px;font:inherit;background:#fff}
+  .dos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .barra{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--linea);padding:12px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;z-index:7}
+  .tot b{font-size:19px} .tot small{display:block;color:var(--gris);font-size:12px}
+  .btn{background:var(--verde);color:#fff;text-decoration:none;font-weight:800;padding:13px 20px;border-radius:12px;border:0;font:inherit;font-weight:800;cursor:pointer;white-space:nowrap}
+  .btn[disabled]{background:#cbd5e1;cursor:default}
+  .faq details{border-bottom:1px solid var(--linea);padding:10px 0} summary{font-weight:700;cursor:pointer}
+  footer{padding:26px 0;color:var(--gris);font-size:13px;border-top:1px solid var(--linea)}
+  @media(max-width:620px){.dos{grid-template-columns:1fr} .mod .top{flex-wrap:wrap} .precio{text-align:left}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="marca">Jorge<span> ·</span> Chávez</div><a class="btn" href="#elegir" style="padding:9px 14px;font-size:14px">Elegir y activar</a></div></header>
+
+<section class="hero"><div class="wrap">
+  <div class="sello">30 días de prueba · si no te sirve, se apaga y no debes nada</div>
+  <h1>Mira cada cosa funcionando, marca la que quieras y la activo hoy</h1>
+  <p class="lead">No son promesas: cada módulo de abajo tiene un ejemplo real que puedes abrir y probar desde tu celular ahora mismo. Marca los que te sirvan, déjame tus datos y te los dejo funcionando el mismo día.</p>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Los servicios</h2>
+  <p class="sub">Toca uno para marcarlo. El precio de abajo se va sumando solo.</p>
+  <div class="mods" id="mods"></div>
+</div></section>
+
+<section id="elegir"><div class="wrap">
+  <h2>Actívalo</h2>
+  <p class="sub">Me llega al WhatsApp con lo que marcaste y te lo dejo listo el mismo día.</p>
+  <div class="form">
+    <div class="dos">
+      <label>Nombre del negocio *<input id="negocio" placeholder="Barbería El Corte" autocomplete="organization"></label>
+      <label>Tu nombre<input id="contacto" placeholder="Marco" autocomplete="name"></label>
+    </div>
+    <div class="dos">
+      <label>Tu WhatsApp *<input id="whatsapp" inputmode="tel" placeholder="9XX XXX XXX" autocomplete="tel"></label>
+      <label>¿Qué tipo de negocio?<select id="rubro">
+        <option value="restaurante">Restaurante, cafetería o dark kitchen</option>
+        <option value="barberia">Barbería</option>
+        <option value="peluqueria">Peluquería o salón de belleza</option>
+        <option value="otro">Otro</option>
+      </select></label>
+    </div>
+    <label>¿Algo que deba saber? <small style="font-weight:400">(opcional)</small><textarea id="nota" rows="2" placeholder="Ej: tengo 2 locales, cobro con Yape, llevo todo en cuaderno…"></textarea></label>
+    <p style="color:var(--gris);font-size:13px;margin:14px 0 0">Al enviar se abre WhatsApp con tu pedido escrito. No se guarda nada en esta página ni te registro en ningún lado: tus datos van solo a mi WhatsApp.</p>
+  </div>
+</div></section>
+
+<section class="faq"><div class="wrap">
+  <h2>Antes de que preguntes</h2>
+  <details><summary>¿Cómo funciona la prueba de 30 días?</summary>Te instalo lo que marcaste y lo usas un mes completo. Si no te sirvió, lo apago y no me debes nada. Si te sirvió, empiezas a pagar el mes siguiente. No hay contrato ni permanencia.</details>
+  <details><summary>¿Tengo que instalar una app o cambiar mi sistema?</summary>No. Todo funciona con lo que ya tienes: tu WhatsApp, tu celular y tus papeles o Excel. Tus clientes tampoco instalan nada: escanean un QR y listo.</details>
+  <details><summary>¿Cómo pago?</summary>Yape o Plin, una vez al mes. Te aviso antes de cada cobro. Si un mes quieres pausar, se pausa.</details>
+  <details><summary>¿Qué pasa con mis datos?</summary>Tus ventas y las opiniones de tus clientes se guardan en mi computadora, no en internet, y no se comparten con nadie. Si te das de baja, te mando todo lo tuyo y lo borro. Lo único público es la página de tu carta o reservas, que es la que tú quieres que vea la gente.</details>
+  <details><summary>Llevo todo en un cuaderno, ¿igual sirve?</summary>Sí. Me mandas una foto del cuaderno por WhatsApp y yo la convierto en números. No necesitas Excel ni sistema de caja.</details>
+  <details><summary>¿Quién eres?</summary>Jorge Chávez, estudiante de Ingeniería Industrial en la UPC, en Lima. Respondo yo por WhatsApp, no un robot.</details>
+</div></section>
+
+<footer><div class="wrap">Lima, Perú · <a href="https://wa.me/51956849763">WhatsApp +51 956 849 763</a> · <a href="../">Restaurantes</a> · <a href="../barberias/">Barberías</a></div></footer>
+
+<div class="barra">
+  <div class="tot"><b id="total">S/ 0</b><small id="detalle">Marca lo que quieras activar</small></div>
+  <button class="btn" id="enviar" disabled onclick="enviar()">Activarlo por WhatsApp</button>
+</div>
+
+<script>
+const WSP = "51956849763";
+const MODS = [
+  {id:"carta", ico:"📱", nombre:"Carta o reservas por WhatsApp", precio:29, inst:149,
+   que:"Tu página con precios. El cliente arma su pedido (o su cita) y te llega escrito al WhatsApp, sin comisiones.",
+   puntos:["Cambias precios o platos el mismo día","En barberías: elige día, hora y con quién","Sin comisiones por pedido ni por cliente","Va en tu Instagram y en un QR en la mesa"],
+   ver:[["Ver una carta de restaurante","../carta/demo/"],["Ver una barbería con reservas","../carta/barberia-demo/"]],
+   img:"../captura-reporte.png", pie:"Así se ve en el celular de tu cliente"},
+  {id:"encuesta", ico:"⭐", nombre:"QR de opiniones + reseñas en Google", precio:49, inst:79,
+   que:"Un cartel con QR. Tus clientes te califican en 30 segundos y los contentos pasan a dejarte reseña en Google.",
+   puntos:["Sabes qué falla antes de que lo escriban en Google","Comentarios escritos de tus clientes","Informe cada mes con qué mejorar primero","Cartel listo para imprimir"],
+   ver:[["Probar la encuesta","../encuesta/?r=demo&n=Negocio%20Demo"],["Ver un informe de ejemplo","../opiniones-demo.pdf"]]},
+  {id:"resumen", ico:"📊", nombre:"Tu resumen de ventas cada semana", precio:99, inst:0,
+   que:"Me mandas lo que cobraste (Excel, export de tu app o foto del cuaderno) y cada semana recibes un PDF con qué subió, qué bajó y 3 cosas para hacer.",
+   puntos:["Junta caja + Rappi + PedidosYa + Yape en un solo resumen","Días y horas fuertes, ticket promedio","Alerta cuando algo cae","3 acciones concretas, no teoría"],
+   ver:[["Ver un resumen de restaurante","../reporte-demo.pdf"],["Ver uno de barbería","../barberia-reporte-demo.pdf"]]},
+  {id:"margen", ico:"💰", nombre:"Cuánto te deja cada plato o servicio", precio:49, inst:149,
+   que:"Pones una vez lo que te cuesta cada cosa y cada mes te digo cuál empujar, a cuál subirle el precio y cuál quitar.",
+   puntos:["Margen y aporte en soles, uno por uno","Mapa: estrellas, caballitos, promesas y lastres","Precio sugerido cuando conviene subirlo","Necesita el resumen semanal"],
+   ver:[["Ver un informe de margen","../margen-demo.pdf"],["Ver uno de barbería","../barberia-margen-demo.pdf"]]},
+];
+const sel = new Set();
+
+document.getElementById('mods').innerHTML = MODS.map(m=>`
+  <div class="mod" id="m-${m.id}">
+    <div class="top" onclick="marcar('${m.id}')">
+      <div class="ico">${m.ico}</div>
+      <div style="flex:1;min-width:0">
+        <h3>${m.nombre}</h3><p>${m.que}</p>
+        <ul>${m.puntos.map(p=>`<li>${p}</li>`).join('')}</ul>
+      </div>
+      <div class="precio">S/ ${m.precio}<small>al mes</small>${m.inst?`<small>+ S/ ${m.inst} instalación</small>`:'<small>sin instalación</small>'}</div>
+      <div class="marca-check">✓</div>
+    </div>
+    <div class="verlo"><b>Míralo funcionando</b><br>
+      ${m.ver.map(([t,u])=>`<a href="${u}" target="_blank">${t} →</a>`).join(' &nbsp;·&nbsp; ')}
+      ${m.img?`<div class="capt"><img src="${m.img}" alt="${m.pie||''}" loading="lazy"></div>`:''}
+    </div>
+  </div>`).join('');
+
+function marcar(id){
+  sel.has(id) ? sel.delete(id) : sel.add(id);
+  document.getElementById('m-'+id).classList.toggle('on', sel.has(id));
+  pintar();
+}
+function pintar(){
+  let mes=0, inst=0; const nombres=[];
+  MODS.forEach(m=>{ if(sel.has(m.id)){ mes+=m.precio; inst+=m.inst; nombres.push(m.nombre); } });
+  // Kit: si marca 3 o más, precio de lanzamiento
+  const kit = sel.size>=3;
+  const mesFinal = kit ? (sel.size===4?199:139) : mes;
+  document.getElementById('total').textContent = 'S/ '+mesFinal+(sel.size?' /mes':'');
+  document.getElementById('detalle').textContent = !sel.size ? 'Marca lo que quieras activar'
+    : (kit? `Kit de ${sel.size} servicios (antes S/ ${mes}) · instalación S/ ${Math.min(inst,199)}`
+          : `${sel.size} servicio(s)${inst?` · instalación S/ ${inst}`:''}`);
+  document.getElementById('enviar').disabled = !sel.size;
+}
+function enviar(){
+  const neg=document.getElementById('negocio').value.trim();
+  const wsp=document.getElementById('whatsapp').value.trim();
+  if(!neg || !wsp){ alert('Pon el nombre de tu negocio y tu WhatsApp para poder responderte.');
+    document.getElementById(neg?'whatsapp':'negocio').focus(); return; }
+  const elegidos = MODS.filter(m=>sel.has(m.id));
+  const mes = elegidos.reduce((a,m)=>a+m.precio,0);
+  const kit = sel.size>=3, mesFinal = kit ? (sel.size===4?199:139) : mes;
+  // Formato fijo: el panel de Jorge lo reconoce y crea el negocio de un toque.
+  const txt = `SOLICITUD\n`
+    + `Negocio: ${neg}\n`
+    + `Contacto: ${document.getElementById('contacto').value.trim()||'-'}\n`
+    + `WhatsApp: ${wsp}\n`
+    + `Rubro: ${document.getElementById('rubro').value}\n`
+    + `Servicios: ${elegidos.map(m=>m.id).join(', ')}\n`
+    + `Precio: S/ ${mesFinal}/mes\n`
+    + `Nota: ${document.getElementById('nota').value.trim()||'-'}\n\n`
+    + `Quiero activarlo con los 30 días de prueba.`;
+  window.open('https://wa.me/'+WSP+'?text='+encodeURIComponent(txt), '_blank');
+}
+pintar();
+</script>
+</body>
+</html>
