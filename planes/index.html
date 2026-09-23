@@ -94,7 +94,7 @@
   <details><summary>¿Cómo funciona la prueba de 30 días?</summary>Te instalo lo que marcaste y lo usas un mes completo. Si no te sirvió, lo apago y no me debes nada. Si te sirvió, empiezas a pagar el mes siguiente. No hay contrato ni permanencia.</details>
   <details><summary>¿Tengo que instalar una app o cambiar mi sistema?</summary>No. Todo funciona con lo que ya tienes: tu WhatsApp, tu celular y tus papeles o Excel. Tus clientes tampoco instalan nada: escanean un QR y listo.</details>
   <details><summary>¿Cómo pago?</summary>Yape o Plin, una vez al mes. Te aviso antes de cada cobro. Si un mes quieres pausar, se pausa.</details>
-  <details><summary>¿Qué pasa con mis datos?</summary>Tus ventas y las opiniones de tus clientes se guardan en mi computadora, no en internet, y no se comparten con nadie. Si te das de baja, te mando todo lo tuyo y lo borro. Lo único público es la página de tu carta o reservas, que es la que tú quieres que vea la gente.</details>
+  <details><summary>¿Qué pasa con mis datos?</summary>Tu carta y tus reservas viven en un servidor de Cloudflare, con candado (https) y copia de seguridad; tus ventas y las opiniones de tus clientes se procesan en mi computadora. Nada se comparte ni se vende a nadie. Cada negocio ve solo lo suyo: no hay forma de que un cliente vea los datos de otro. Yo sí puedo entrar a tu panel para ayudarte cuando lo pidas, y cada vez que entro queda anotado con fecha y hora en tu historial, que tú puedes leer. Si te das de baja, te mando todo lo tuyo y lo borro: a los 30 días no queda ni el nombre, y si lo quieres borrado el mismo día, se borra el mismo día. Lo único público es la página de tu carta o reservas, que es la que tú quieres que vea la gente.</details>
   <details><summary>Llevo todo en un cuaderno, ¿igual sirve?</summary>Sí. Me mandas una foto del cuaderno por WhatsApp y yo la convierto en números. No necesitas Excel ni sistema de caja.</details>
   <details><summary>¿Quién eres?</summary>Jorge Chávez, estudiante de Ingeniería Industrial en la UPC, en Lima. Respondo yo por WhatsApp, no un robot.</details>
 </div></section>
@@ -112,7 +112,10 @@ const MODS = [
   {id:"carta", ico:"📱", nombre:"Carta o reservas por WhatsApp", precio:29, inst:149,
    que:"Tu página con precios. El cliente arma su pedido (o su cita) y te llega escrito al WhatsApp, sin comisiones.",
    puntos:["Cambias precios o platos el mismo día","En barberías: elige día, hora y con quién","Sin comisiones por pedido ni por cliente","Va en tu Instagram y en un QR en la mesa"],
-   ver:[["Ver una carta de restaurante","../carta/demo/"],["Ver una barbería con reservas","../carta/barberia-demo/"]],
+   ver:[["Ver una carta de restaurante de verdad","https://carta-viva.carta-viva.workers.dev/c/demo-sabor-criollo"],
+        ["Ver una barbería con reservas de verdad","https://carta-viva.carta-viva.workers.dev/c/demo-barberia-el-corte"],
+        ["Ver la carta como documento para imprimir","https://carta-viva.carta-viva.workers.dev/c/demo-sabor-criollo/pdf"],
+        ["Ver una maqueta (sin internet)","../carta/demo/"]],
    img:"../captura-reporte.png", pie:"Así se ve en el celular de tu cliente"},
   {id:"encuesta", ico:"⭐", nombre:"QR de opiniones + reseñas en Google", precio:49, inst:79,
    que:"Un cartel con QR. Tus clientes te califican en 30 segundos y los contentos pasan a dejarte reseña en Google.",
