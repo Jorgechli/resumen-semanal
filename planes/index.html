@@ -42,7 +42,14 @@
   .btn[disabled]{background:#cbd5e1;cursor:default}
   .faq details{border-bottom:1px solid var(--linea);padding:10px 0} summary{font-weight:700;cursor:pointer}
   footer{padding:26px 0;color:var(--gris);font-size:13px;border-top:1px solid var(--linea)}
-  @media(max-width:620px){.dos{grid-template-columns:1fr} .mod .top{flex-wrap:wrap} .precio{text-align:left}}
+  @media(max-width:620px){
+    .dos{grid-template-columns:1fr}
+    .mod .top{flex-wrap:wrap;position:relative;padding-right:52px}
+    .mod .ico{font-size:26px}
+    .precio{order:3;width:100%;text-align:left;margin-top:8px;padding-top:8px;border-top:1px dashed var(--linea)}
+    .precio small{display:inline;margin-right:8px}
+    .marca-check{position:absolute;top:16px;right:16px}
+  }
 </style>
 </head>
 <body>
@@ -150,9 +157,10 @@ function pintar(){
   // Kit: si marca 3 o más, precio de lanzamiento
   const kit = sel.size>=3;
   const mesFinal = kit ? (sel.size===4?199:139) : mes;
+  const instFinal = kit ? (sel.size===4?199:149) : inst;
   document.getElementById('total').textContent = 'S/ '+mesFinal+(sel.size?' /mes':'');
   document.getElementById('detalle').textContent = !sel.size ? 'Marca lo que quieras activar'
-    : (kit? `Kit de ${sel.size} servicios (antes S/ ${mes}) · instalación S/ ${Math.min(inst,199)}`
+    : (kit? `Kit de ${sel.size} servicios (antes S/ ${mes}/mes) · instalación S/ ${instFinal}`
           : `${sel.size} servicio(s)${inst?` · instalación S/ ${inst}`:''}`);
   document.getElementById('enviar').disabled = !sel.size;
 }
@@ -164,6 +172,7 @@ function enviar(){
   const elegidos = MODS.filter(m=>sel.has(m.id));
   const mes = elegidos.reduce((a,m)=>a+m.precio,0);
   const kit = sel.size>=3, mesFinal = kit ? (sel.size===4?199:139) : mes;
+  const instTotal = kit ? (sel.size===4?199:149) : elegidos.reduce((a,m)=>a+m.inst,0);
   // Formato fijo: el panel de Jorge lo reconoce y crea el negocio de un toque.
   const txt = `SOLICITUD\n`
     + `Negocio: ${neg}\n`
@@ -171,7 +180,7 @@ function enviar(){
     + `WhatsApp: ${wsp}\n`
     + `Rubro: ${document.getElementById('rubro').value}\n`
     + `Servicios: ${elegidos.map(m=>m.id).join(', ')}\n`
-    + `Precio: S/ ${mesFinal}/mes\n`
+    + `Precio: S/ ${mesFinal}/mes + S/ ${instTotal} instalación\n`
     + `Nota: ${document.getElementById('nota').value.trim()||'-'}\n\n`
     + `Quiero activarlo con los 30 días de prueba.`;
   window.open('https://wa.me/'+WSP+'?text='+encodeURIComponent(txt), '_blank');
