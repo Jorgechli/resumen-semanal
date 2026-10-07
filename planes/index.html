@@ -3,13 +3,33 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Elige lo que quieres activar — Jorge Chávez</title>
-<meta name="description" content="Mira cada servicio funcionando de verdad, marca el que quieras y actívalo hoy. 30 días de prueba: si no te sirve, se apaga y no debes nada.">
+<meta name="color-scheme" content="light dark">
+<title>Elige lo que quieres activar — JESHARO</title>
+<meta name="description" content="Mira cada servicio funcionando de verdad, marca el que quieras y actívalo hoy. 7 días de prueba: si no te sirve, se apaga y no debes nada.">
+<link rel="icon" href="../marca/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../marca/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="../marca/apple-touch-icon.png">
+<meta name="theme-color" content="#14213D">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="JESHARO">
+<meta property="og:locale" content="es_PE">
+<meta property="og:title" content="Elige lo que quieres activar — JESHARO">
+<meta property="og:description" content="Mira cada servicio funcionando de verdad, marca el que quieras y actívalo hoy. 7 días de prueba: si no te sirve, se apaga y no debes nada. Tu negocio, en orden.">
+<meta property="og:url" content="https://jesharo.com/planes/">
+<meta property="og:image" content="https://jesharo.com/marca/compartir-1200x630.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Jesharo — Tu negocio, en orden.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Elige lo que quieres activar — JESHARO">
+<meta name="twitter:description" content="Mira cada servicio funcionando de verdad, marca el que quieras y actívalo hoy. 7 días de prueba: si no te sirve, se apaga y no debes nada. Tu negocio, en orden.">
+<meta name="twitter:image" content="https://jesharo.com/marca/compartir-1200x630.png">
 <style>
-  :root{--azul:#1d4ed8;--tinta:#0f172a;--gris:#475569;--fondo:#f8fafc;--linea:#e2e8f0;--verde:#16a34a;--oro:#f59e0b}
-  *{box-sizing:border-box} body{margin:0;font-family:-apple-system,Inter,Segoe UI,Helvetica,Arial,sans-serif;color:var(--tinta);background:#fff;line-height:1.55;padding-bottom:96px}
+  :root{--azul:#1d4ed8;--tinta:#0f172a;--gris:#475569;--fondo:#f8fafc;--linea:#e2e8f0;--verde:#16a34a;--oro:#f59e0b;--papel:#fff;--elegido:#f0fdf4}
+  *{box-sizing:border-box} body{margin:0;font-family:-apple-system,Inter,Segoe UI,Helvetica,Arial,sans-serif;color:var(--tinta);background:var(--papel);line-height:1.55;padding-bottom:96px}
+  a{color:var(--azul)}
   .wrap{max-width:980px;margin:0 auto;padding:0 20px}
-  header{padding:14px 0;border-bottom:1px solid var(--linea);position:sticky;top:0;background:#fff;z-index:6}
+  header{padding:14px 0;border-bottom:1px solid var(--linea);position:sticky;top:0;background:var(--papel);z-index:6}
   header .wrap{display:flex;justify-content:space-between;align-items:center;gap:10px}
   .marca{font-weight:800} .marca span{color:var(--azul)}
   .hero{padding:40px 0 20px} h1{font-size:clamp(26px,4.6vw,38px);line-height:1.15;margin:0 0 12px;letter-spacing:-.02em}
@@ -18,53 +38,85 @@
   section{padding:26px 0} h2{font-size:24px;margin:0 0 4px} .sub{color:var(--gris);margin:0 0 18px}
   .mods{display:grid;gap:16px}
   .mod{border:2px solid var(--linea);border-radius:18px;overflow:hidden;transition:border-color .15s}
-  .mod.on{border-color:var(--verde);background:#f0fdf4}
+  .mod.on{border-color:var(--verde);background:var(--elegido)}
+  .mod.piloto{border-style:dashed}
   .mod .top{display:flex;gap:14px;padding:18px;align-items:flex-start;cursor:pointer}
+  .mod.piloto .top{cursor:default}
   .mod .ico{font-size:30px;line-height:1;flex:none}
   .mod h3{margin:0 0 4px;font-size:19px} .mod p{margin:0 0 8px;color:var(--gris);font-size:15px}
   .mod ul{margin:0;padding-left:18px;color:var(--gris);font-size:14px} .mod li{margin:2px 0}
+  .etq{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#92400e;background:#fef3c7;border-radius:999px;padding:2px 8px;margin-bottom:6px}
   .precio{font-weight:800;color:var(--azul);white-space:nowrap;text-align:right;flex:none}
   .precio small{display:block;font-weight:600;color:var(--gris);font-size:12px}
-  .marca-check{width:26px;height:26px;border-radius:8px;border:2px solid var(--linea);flex:none;display:grid;place-items:center;font-weight:800;color:#fff;background:#fff}
+  .marca-check{width:26px;height:26px;border-radius:8px;border:2px solid var(--linea);flex:none;display:grid;place-items:center;font-weight:800;color:#fff;background:var(--papel)}
   .mod.on .marca-check{background:var(--verde);border-color:var(--verde)}
   .verlo{background:var(--fondo);border-top:1px solid var(--linea);padding:14px 18px}
   .verlo b{font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--gris)}
-  .capt{margin-top:10px;border:1px solid var(--linea);border-radius:12px;overflow:hidden;background:#fff}
-  .capt img{display:block;width:100%}
+  .verlo p{margin:8px 0 0;color:var(--gris);font-size:14px}
+  .capt{margin-top:10px;border:1px solid var(--linea);border-radius:12px;overflow:hidden;background:var(--papel)}
+  .capt img{display:block;width:100%;height:auto}
+  .capt small{display:block;padding:6px 10px;color:var(--gris);font-size:12px}
   .verlo a{display:inline-block;margin-top:10px;color:var(--azul);font-weight:700;text-decoration:none;font-size:14px}
   .form{background:var(--fondo);border:1px solid var(--linea);border-radius:18px;padding:20px;margin-top:10px}
   label{display:block;font-size:12px;font-weight:700;color:var(--gris);margin-top:12px}
-  input,select,textarea{width:100%;margin-top:5px;padding:11px;border:1px solid var(--linea);border-radius:10px;font:inherit;background:#fff}
+  input,select,textarea{width:100%;margin-top:5px;padding:11px;border:1px solid var(--linea);border-radius:10px;font:inherit;background:var(--papel);color:var(--tinta)}
   .dos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-  .barra{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--linea);padding:12px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;z-index:7}
-  .tot b{font-size:19px} .tot small{display:block;color:var(--gris);font-size:12px}
+  .barra{position:fixed;left:0;right:0;bottom:0;background:var(--papel);border-top:1px solid var(--linea);padding:12px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;z-index:7}
+  .tot{min-width:0} .tot b{font-size:19px} .tot small{display:block;color:var(--gris);font-size:12px}
   .btn{background:var(--verde);color:#fff;text-decoration:none;font-weight:800;padding:13px 20px;border-radius:12px;border:0;font:inherit;font-weight:800;cursor:pointer;white-space:nowrap}
-  .btn[disabled]{background:#cbd5e1;cursor:default}
+  .btn[disabled]{background:#cbd5e1;color:#475569;cursor:default}
   .faq details{border-bottom:1px solid var(--linea);padding:10px 0} summary{font-weight:700;cursor:pointer}
   footer{padding:26px 0;color:var(--gris);font-size:13px;border-top:1px solid var(--linea)}
   @media(max-width:620px){
     .dos{grid-template-columns:1fr}
     .mod .top{flex-wrap:wrap;position:relative;padding-right:52px}
     .mod .ico{font-size:26px}
-    .precio{order:3;width:100%;text-align:left;margin-top:8px;padding-top:8px;border-top:1px dashed var(--linea)}
-    .precio small{display:inline;margin-right:8px}
+    .precio{order:3;width:100%;text-align:left;margin-top:8px;padding-top:8px;border-top:1px dashed var(--linea);white-space:normal}
+    .precio small{display:inline;margin:0 8px 0 6px}
     .marca-check{position:absolute;top:16px;right:16px}
+    .barra .btn{padding:12px 14px}
   }
+  @media (prefers-color-scheme:dark){
+    header{background:#14213D;border-bottom-color:#24324a}
+    :root{--azul:#60a5fa;--tinta:#e2e8f0;--gris:#9fb0c6;--fondo:#111a2b;--linea:#24324a;--papel:#0b1220;--elegido:#0d2418}
+    .sello,.etq{background:#3a2a06;color:#fcd34d}
+    .btn[disabled]{background:#24324a;color:#9fb0c6}
+  }
+  .logo{display:inline-flex;align-items:center;line-height:0;border-radius:6px;flex:none} .logo img{display:block;height:34px;width:auto;max-width:100%} .logo:focus-visible{outline:2px solid var(--azul);outline-offset:3px}
+  @media (max-width:600px){.logo img{height:30px}}
 </style>
 </head>
 <body>
-<header><div class="wrap"><div class="marca">Jorge<span> ·</span> Chávez</div><a class="btn" href="#elegir" style="padding:9px 14px;font-size:14px">Elegir y activar</a></div></header>
+<header><div class="wrap"><a class="logo" href="../" aria-label="Jesharo, ir al inicio"><picture><source media="(prefers-color-scheme: dark)" srcset="../marca/logo-horizontal-oscuro.svg"><img src="../marca/logo-horizontal.svg" alt="Jesharo" width="158" height="34"></picture></a><a class="btn" href="#elegir" style="padding:9px 14px;font-size:14px">Elegir y activar</a></div></header>
 
 <section class="hero"><div class="wrap">
-  <div class="sello">30 días de prueba · si no te sirve, se apaga y no debes nada</div>
+  <div class="sello">7 días de prueba · si no te sirve, se apaga y no debes nada</div>
   <h1>Mira cada cosa funcionando, marca la que quieras y la activo hoy</h1>
-  <p class="lead">No son promesas: cada módulo de abajo tiene un ejemplo real que puedes abrir y probar desde tu celular ahora mismo. Marca los que te sirvan, déjame tus datos y te los dejo funcionando el mismo día.</p>
+  <p class="lead">No son promesas: cada servicio de abajo tiene un ejemplo real que puedes abrir y probar desde tu celular ahora mismo. Marca los que te sirvan, déjame tus datos y te los dejo funcionando el mismo día.</p>
 </div></section>
 
 <section><div class="wrap">
   <h2>Los servicios</h2>
   <p class="sub">Toca uno para marcarlo. El precio de abajo se va sumando solo.</p>
   <div class="mods" id="mods"></div>
+  <div class="mods" style="margin-top:16px">
+    <div class="mod piloto">
+      <div class="top">
+        <div class="ico">📞</div>
+        <div style="flex:1;min-width:0">
+          <span class="etq">Piloto · cupos limitados</span>
+          <h3>Asistente de hora punta para tus llamadas</h3>
+          <p>Es como tener una persona más contestando el teléfono de tu local: cuando tu línea está ocupada o nadie alcanza a contestar, un asistente virtual atiende, toma el pedido con tu carta, lo lee de vuelta con el total y te lo manda a una pantalla y a tu WhatsApp con la grabación. Tu número no cambia.</p>
+          <ul><li>Se presenta como asistente virtual y avisa que la llamada se graba</li><li>Si el cliente pide una persona, te pasa la llamada</li><li>No cobra con tarjeta, no atiende reclamos y no se conecta a tu caja</li><li>Para pollerías y chifas con delivery que pierden llamadas en hora punta</li></ul>
+        </div>
+        <div class="precio">S/&nbsp;449<small>al mes por cada local</small><small>instalación S/&nbsp;299 por local</small><small>prueba de 1 día</small></div>
+      </div>
+      <div class="verlo"><b>Cómo se activa</b>
+        <p>Hoy es una demo: te la muestro en persona con tu carta. Si te sirve, lo conectamos a tu número como piloto. Se cobra <b>por cada local instalado</b>, e incluye un uso justo de hasta ~1,000 minutos al mes por local (unas 330 llamadas de 3 minutos). La instalación (S/&nbsp;299 por local) es gratis para los 2 o 3 primeros pilotos. La prueba es de <b>1 día</b> y cuenta desde que tu línea queda conectada; si no te sirve, la desconecto y no me debes nada. El desvío de llamadas lo activa tu operador y su costo depende de tu plan. Se contrata aparte, no entra en el carrito.</p>
+        <a href="https://wa.me/51956849763?text=Hola%20Jorge%2C%20me%20interesa%20un%20cupo%20del%20piloto%20del%20asistente%20de%20llamadas" target="_blank" rel="noopener">Pedir un cupo del piloto por WhatsApp →</a>
+      </div>
+    </div>
+  </div>
 </div></section>
 
 <section id="elegir"><div class="wrap">
@@ -85,86 +137,97 @@
       </select></label>
     </div>
     <label>¿Algo que deba saber? <small style="font-weight:400">(opcional)</small><textarea id="nota" rows="2" placeholder="Ej: tengo 2 locales, cobro con Yape, llevo todo en cuaderno…"></textarea></label>
-    <p style="color:var(--gris);font-size:13px;margin:14px 0 0">Al enviar se abre WhatsApp con tu pedido escrito. No se guarda nada en esta página ni te registro en ningún lado: tus datos van solo a mi WhatsApp.</p>
+    <p style="color:var(--gris);font-size:13px;margin:14px 0 0">Al enviar se abre WhatsApp con tu pedido escrito. Esta página no guarda nada ni te registra en ningún lado: tus datos van solo a mi WhatsApp. Al activarlo aceptas los <a href="../terminos/">términos del servicio</a>; así cuido tus datos: <a href="../privacidad/">política de privacidad</a>.</p>
   </div>
 </div></section>
 
 <section class="faq"><div class="wrap">
   <h2>Antes de que preguntes</h2>
-  <details><summary>¿Cómo funciona la prueba de 30 días?</summary>Te instalo lo que marcaste y lo usas un mes completo. Si no te sirvió, lo apago y no me debes nada. Si te sirvió, empiezas a pagar el mes siguiente. No hay contrato ni permanencia.</details>
+  <details><summary>¿Cómo funciona la prueba de 7 días?</summary>Te instalo lo que marcaste y lo usas 7 días sin pagar. Si no te sirvió, lo apago y no me debes nada. Si te sirvió, pagas la instalación y el primer mes, y sigue funcionando sin cortes. No hay contrato ni permanencia. El asistente de llamadas es la única excepción: su prueba es de 1 día, desde que tu línea queda conectada.</details>
   <details><summary>¿Tengo que instalar una app o cambiar mi sistema?</summary>No. Todo funciona con lo que ya tienes: tu WhatsApp, tu celular y tus papeles o Excel. Tus clientes tampoco instalan nada: escanean un QR y listo.</details>
-  <details><summary>¿Cómo pago?</summary>Yape o Plin, una vez al mes. Te aviso antes de cada cobro. Si un mes quieres pausar, se pausa.</details>
-  <details><summary>¿Qué pasa con mis datos?</summary>Tu carta y tus reservas viven en un servidor de Cloudflare, con candado (https) y copia de seguridad; tus ventas y las opiniones de tus clientes se procesan en mi computadora. Nada se comparte ni se vende a nadie. Cada negocio ve solo lo suyo: no hay forma de que un cliente vea los datos de otro. Yo sí puedo entrar a tu panel para ayudarte cuando lo pidas, y cada vez que entro queda anotado con fecha y hora en tu historial, que tú puedes leer. Si te das de baja, te mando todo lo tuyo y lo borro: a los 30 días no queda ni el nombre, y si lo quieres borrado el mismo día, se borra el mismo día. Lo único público es la página de tu carta o reservas, que es la que tú quieres que vea la gente.</details>
+  <details><summary>¿Cómo pago?</summary>Por Yape o Plin, una vez al mes y por adelantado. Te aviso antes de cada cobro. Si un pago se atrasa, te aviso antes de apagar nada; si no se resuelve, el servicio se apaga hasta que se ponga al día, sin borrar tus datos. Te das de baja cuando quieras.</details>
+  <details><summary>¿Qué pasa con mis datos?</summary>Tu carta (platos, precios y fotos) vive en servidores de Cloudflare, fuera del Perú, con candado (https) y copia para volver atrás de los últimos 7 días. Los pedidos y reservas no se guardan ahí: van directo de tu cliente a tu WhatsApp. Las opiniones de tus clientes llegan a un formulario de Google en mi cuenta, y tus archivos de ventas se procesan en mi computadora. Nada se vende ni se comparte con otros negocios, y cada negocio ve solo lo suyo. Yo sí puedo entrar a tu panel para darte soporte: cada vez que entro queda anotado con fecha y hora, y te muestro ese registro cuando lo pidas. Si te das de baja, te mando todo lo tuyo y lo borro a los 30 días; si lo quieres borrado el mismo día, se borra el mismo día. Lo único público es la página de tu carta o reservas, que es la que tú quieres que vea la gente. El detalle completo está en la <a href="../privacidad/">política de privacidad</a>.</details>
   <details><summary>Llevo todo en un cuaderno, ¿igual sirve?</summary>Sí. Me mandas una foto del cuaderno por WhatsApp y yo la convierto en números. No necesitas Excel ni sistema de caja.</details>
   <details><summary>¿Quién eres?</summary>Jorge Chávez, estudiante de Ingeniería Industrial en la UPC, en Lima. Respondo yo por WhatsApp, no un robot.</details>
 </div></section>
 
-<footer><div class="wrap">Lima, Perú · <a href="https://wa.me/51956849763">WhatsApp +51 956 849 763</a> · <a href="../">Restaurantes</a> · <a href="../barberias/">Barberías</a></div></footer>
+<footer><div class="wrap">Lima, Perú · <a href="https://wa.me/51956849763" target="_blank" rel="noopener">WhatsApp +51 956 849 763</a> · <a href="../">Restaurantes</a> · <a href="../barberias/">Barberías</a> · <a href="../terminos/">Términos del servicio</a> · <a href="../privacidad/">Privacidad</a></div></footer>
 
 <div class="barra">
-  <div class="tot"><b id="total">S/ 0</b><small id="detalle">Marca lo que quieras activar</small></div>
+  <div class="tot"><b id="total">S/&nbsp;0</b><small id="detalle">Marca lo que quieras activar</small></div>
   <button class="btn" id="enviar" disabled onclick="enviar()">Activarlo por WhatsApp</button>
 </div>
 
 <script>
 const WSP = "51956849763";
+// Precios = PRECIOS de Carta Viva (src/index.js). Si cambian allá, cambian aquí.
 const MODS = [
-  {id:"carta", ico:"📱", nombre:"Carta o reservas por WhatsApp", precio:29, inst:149,
-   que:"Tu página con precios. El cliente arma su pedido (o su cita) y te llega escrito al WhatsApp, sin comisiones.",
-   puntos:["Cambias precios o platos el mismo día","En barberías: elige día, hora y con quién","Sin comisiones por pedido ni por cliente","Va en tu Instagram y en un QR en la mesa"],
-   ver:[["Ver una carta de restaurante de verdad","https://carta-viva.carta-viva.workers.dev/c/demo-sabor-criollo"],
-        ["Ver una barbería con reservas de verdad","https://carta-viva.carta-viva.workers.dev/c/demo-barberia-el-corte"],
-        ["Ver la carta como documento para imprimir","https://carta-viva.carta-viva.workers.dev/c/demo-sabor-criollo/pdf"],
-        ["Ver una maqueta (sin internet)","../carta/demo/"]],
-   img:"../captura-reporte.png", pie:"Así se ve en el celular de tu cliente"},
+  {id:"carta", ico:"📱", nombre:"Carta o reservas por WhatsApp", precio:39, inst:149, lanz:["precio de lanzamiento","primeros 10 negocios"],
+   que:"Tu página con precios y fotos. El cliente arma su pedido (o su cita) y te llega escrito a tu WhatsApp, sin comisiones.",
+   puntos:["Tú mismo cambias precios, fotos y platos agotados desde tu celular (o me lo pides)","En barberías: elige servicio, día, hora y con quién","Sin comisiones por pedido ni por cliente","El QR no cambia nunca: va en tu mesa, tu Instagram y tus volantes"],
+   ver:[["Ver una carta de restaurante de verdad","https://jesharo.com/c/demo-sabor-criollo"],
+        ["Ver una barbería con reservas de verdad","https://jesharo.com/c/demo-barberia-el-corte"],
+        ["Ver la carta lista para imprimir","https://jesharo.com/c/demo-sabor-criollo/pdf"]]},
   {id:"encuesta", ico:"⭐", nombre:"QR de opiniones + reseñas en Google", precio:49, inst:79,
-   que:"Un cartel con QR. Tus clientes te califican en 30 segundos y los contentos pasan a dejarte reseña en Google.",
+   que:"Un cartel con QR. Tus clientes te califican en 30 segundos y al final se les invita a dejarte reseña en Google.",
    puntos:["Sabes qué falla antes de que lo escriban en Google","Comentarios escritos de tus clientes","Informe cada mes con qué mejorar primero","Cartel listo para imprimir"],
    ver:[["Probar la encuesta","../encuesta/?r=demo&n=Negocio%20Demo"],["Ver un informe de ejemplo","../opiniones-demo.pdf"]]},
   {id:"resumen", ico:"📊", nombre:"Tu resumen de ventas cada semana", precio:99, inst:0,
    que:"Me mandas lo que cobraste (Excel, export de tu app o foto del cuaderno) y cada semana recibes un PDF con qué subió, qué bajó y 3 cosas para hacer.",
-   puntos:["Junta caja + Rappi + PedidosYa + Yape en un solo resumen","Días y horas fuertes, ticket promedio","Alerta cuando algo cae","3 acciones concretas, no teoría"],
-   ver:[["Ver un resumen de restaurante","../reporte-demo.pdf"],["Ver uno de barbería","../barberia-reporte-demo.pdf"]]},
+   puntos:["Junta caja + Rappi + PedidosYa + Yape en un solo resumen (con varias fuentes o 2+ locales: S/\u00a0179 al mes)","Días y horas fuertes, ticket promedio","Alerta cuando algo cae","3 acciones concretas, no teoría"],
+   ver:[["Ver un resumen de restaurante","../reporte-demo.pdf"],["Ver uno de barbería","../barberia-reporte-demo.pdf"]],
+   img:"../captura-reporte.png", pie:"Así se ve tu resumen semanal (ejemplo con datos inventados)"},
   {id:"margen", ico:"💰", nombre:"Cuánto te deja cada plato o servicio", precio:49, inst:149,
    que:"Pones una vez lo que te cuesta cada cosa y cada mes te digo cuál empujar, a cuál subirle el precio y cuál quitar.",
-   puntos:["Margen y aporte en soles, uno por uno","Mapa: estrellas, caballitos, promesas y lastres","Precio sugerido cuando conviene subirlo","Necesita el resumen semanal"],
+   puntos:["Margen y aporte en soles, uno por uno","Mapa: estrellas, caballitos, promesas y lastres","Precio sugerido cuando conviene subirlo","Necesita el resumen semanal (se marca solo)"],
    ver:[["Ver un informe de margen","../margen-demo.pdf"],["Ver uno de barbería","../barberia-margen-demo.pdf"]]},
 ];
 const sel = new Set();
 
 document.getElementById('mods').innerHTML = MODS.map(m=>`
   <div class="mod" id="m-${m.id}">
-    <div class="top" onclick="marcar('${m.id}')">
+    <div class="top" onclick="marcar('${m.id}')" role="button" tabindex="0" aria-pressed="false">
       <div class="ico">${m.ico}</div>
       <div style="flex:1;min-width:0">
         <h3>${m.nombre}</h3><p>${m.que}</p>
         <ul>${m.puntos.map(p=>`<li>${p}</li>`).join('')}</ul>
       </div>
-      <div class="precio">S/ ${m.precio}<small>al mes</small>${m.inst?`<small>+ S/ ${m.inst} instalación</small>`:'<small>sin instalación</small>'}</div>
+      <div class="precio">S/ ${m.precio}<small>al mes</small>${(m.lanz||[]).map(x=>`<small>${x}</small>`).join('')}${m.inst?`<small>+ S/ ${m.inst} instalación</small>`:'<small>sin instalación</small>'}</div>
       <div class="marca-check">✓</div>
     </div>
     <div class="verlo"><b>Míralo funcionando</b><br>
-      ${m.ver.map(([t,u])=>`<a href="${u}" target="_blank">${t} →</a>`).join(' &nbsp;·&nbsp; ')}
-      ${m.img?`<div class="capt"><img src="${m.img}" alt="${m.pie||''}" loading="lazy"></div>`:''}
+      ${m.ver.map(([t,u])=>`<a href="${u}" target="_blank" rel="noopener">${t} →</a>`).join(' &nbsp;·&nbsp; ')}
+      ${m.img?`<div class="capt"><img src="${m.img}" alt="${m.pie||''}" loading="lazy"><small>${m.pie||''}</small></div>`:''}
     </div>
   </div>`).join('');
+document.querySelectorAll('.mod .top[role=button]').forEach(t=>t.addEventListener('keydown',e=>{
+  if(e.key==='Enter'||e.key===' '){ e.preventDefault(); t.click(); } }));
 
 function marcar(id){
-  sel.has(id) ? sel.delete(id) : sel.add(id);
-  document.getElementById('m-'+id).classList.toggle('on', sel.has(id));
+  const poner = !sel.has(id);
+  poner ? sel.add(id) : sel.delete(id);
+  // El margen usa las ventas del resumen: marcar margen marca resumen; quitar resumen quita margen.
+  if(id==='margen' && poner) sel.add('resumen');
+  if(id==='resumen' && !poner) sel.delete('margen');
+  MODS.forEach(m=>{ const el=document.getElementById('m-'+m.id); el.classList.toggle('on', sel.has(m.id));
+    el.querySelector('.top').setAttribute('aria-pressed', sel.has(m.id)?'true':'false'); });
   pintar();
 }
-function pintar(){
-  let mes=0, inst=0; const nombres=[];
-  MODS.forEach(m=>{ if(sel.has(m.id)){ mes+=m.precio; inst+=m.inst; nombres.push(m.nombre); } });
-  // Kit: si marca 3 o más, precio de lanzamiento
+function calcular(){
+  const elegidos = MODS.filter(m=>sel.has(m.id));
+  const mes = elegidos.reduce((a,m)=>a+m.precio,0), inst = elegidos.reduce((a,m)=>a+m.inst,0);
+  // Kit de lanzamiento: 3 servicios = S/ 139/mes (instalación S/ 149); los 4 = S/ 199/mes (instalación S/ 199).
   const kit = sel.size>=3;
-  const mesFinal = kit ? (sel.size===4?199:139) : mes;
-  const instFinal = kit ? (sel.size===4?199:149) : inst;
-  document.getElementById('total').textContent = 'S/ '+mesFinal+(sel.size?' /mes':'');
+  return {elegidos, mes, inst, kit,
+          mesFinal: kit ? (sel.size===4?199:139) : mes,
+          instFinal: kit ? (sel.size===4?199:149) : inst};
+}
+function pintar(){
+  const c = calcular();
+  document.getElementById('total').textContent = 'S/ '+c.mesFinal+(sel.size?' /mes':'');
   document.getElementById('detalle').textContent = !sel.size ? 'Marca lo que quieras activar'
-    : (kit? `Kit de ${sel.size} servicios (antes S/ ${mes}/mes) · instalación S/ ${instFinal}`
-          : `${sel.size} servicio(s)${inst?` · instalación S/ ${inst}`:''}`);
+    : (c.kit? `Kit de lanzamiento (sueltos: S/ ${c.mes}/mes) · instalación S/ ${c.instFinal} · 7 días gratis`
+          : `${sel.size} servicio(s) · ${c.inst?`instalación S/ ${c.inst}`:'sin instalación'} · 7 días gratis`);
   document.getElementById('enviar').disabled = !sel.size;
 }
 function enviar(){
@@ -172,20 +235,17 @@ function enviar(){
   const wsp=document.getElementById('whatsapp').value.trim();
   if(!neg || !wsp){ alert('Pon el nombre de tu negocio y tu WhatsApp para poder responderte.');
     document.getElementById(neg?'whatsapp':'negocio').focus(); return; }
-  const elegidos = MODS.filter(m=>sel.has(m.id));
-  const mes = elegidos.reduce((a,m)=>a+m.precio,0);
-  const kit = sel.size>=3, mesFinal = kit ? (sel.size===4?199:139) : mes;
-  const instTotal = kit ? (sel.size===4?199:149) : elegidos.reduce((a,m)=>a+m.inst,0);
-  // Formato fijo: el panel de Jorge lo reconoce y crea el negocio de un toque.
+  const c = calcular();
+  // Formato fijo: el panel de Jorge (negocios.py, leer_solicitud_pegada) lo reconoce y crea el negocio de un toque.
   const txt = `SOLICITUD\n`
     + `Negocio: ${neg}\n`
     + `Contacto: ${document.getElementById('contacto').value.trim()||'-'}\n`
     + `WhatsApp: ${wsp}\n`
     + `Rubro: ${document.getElementById('rubro').value}\n`
-    + `Servicios: ${elegidos.map(m=>m.id).join(', ')}\n`
-    + `Precio: S/ ${mesFinal}/mes + S/ ${instTotal} instalación\n`
+    + `Servicios: ${c.elegidos.map(m=>m.id).join(', ')}\n`
+    + `Precio: S/ ${c.mesFinal}/mes + S/ ${c.instFinal} instalación\n`
     + `Nota: ${document.getElementById('nota').value.trim()||'-'}\n\n`
-    + `Quiero activarlo con los 30 días de prueba.`;
+    + `Quiero activarlo con los 7 días de prueba.`;
   window.open('https://wa.me/'+WSP+'?text='+encodeURIComponent(txt), '_blank');
 }
 pintar();

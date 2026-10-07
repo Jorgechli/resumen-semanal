@@ -21,7 +21,7 @@
   .btn[disabled]{opacity:.5;cursor:default}
   .gracias{display:none;text-align:center;padding:40px 10px} .gracias h2{font-size:26px;margin:0 0 8px}
   .gracias a{display:inline-block;margin-top:14px;background:var(--azul);color:#fff;text-decoration:none;padding:12px 18px;border-radius:12px;font-weight:700}
-  .pie{color:var(--gris);font-size:12px;text-align:center;margin-top:16px}
+  .pie{color:var(--gris);font-size:12px;text-align:center;margin-top:16px} .pie a{color:var(--azul)}
   .err{color:#b91c1c;font-size:13px;display:none;margin:6px 0}
 </style>
 </head>
@@ -29,7 +29,7 @@
 <div class="wrap">
   <form id="f">
     <h1 id="titulo">¿Cómo estuvo tu visita?</h1>
-    <p class="sub">Tu opinión llega directo al dueño de <span class="rest" id="nombre">este negocio</span>. Te toma 30 segundos.</p>
+    <p class="sub">Tu opinión le llega al dueño de <span class="rest" id="nombre">este negocio</span>. Te toma 30 segundos.</p>
 
     <div class="bloque"><label>En general, ¿cómo calificarías tu experiencia?</label><div class="estrellas" data-campo="experiencia"></div></div>
     <div class="bloque"><label id="lb-comida">La comida</label><div class="estrellas" data-campo="comida"></div></div>
@@ -40,13 +40,13 @@
     <div style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true"><label>Sitio web<input id="web" tabindex="-1" autocomplete="off"></label></div>
     <p class="err" id="err">Marca al menos la calificación general (las estrellas de arriba).</p>
     <button class="btn" id="enviar" type="submit">Enviar opinión</button>
-    <p class="pie">Es anónimo salvo que dejes tu WhatsApp. No recibirás publicidad.</p>
+    <p class="pie">Es anónimo salvo que dejes tu WhatsApp, que solo se usa para responderte. No recibirás publicidad. <a href="../privacidad/" target="_blank" rel="noopener">Cómo se cuidan tus datos</a></p>
   </form>
 
   <div class="gracias" id="gracias">
     <div style="font-size:54px">🙌</div>
     <h2>¡Gracias!</h2>
-    <p>Tu opinión ya le llegó al dueño. Nos ayuda a mejorar de verdad.</p>
+    <p>Tu opinión quedó registrada y la leerá el dueño. Nos ayuda a mejorar de verdad.</p>
     <a id="resena" href="#" target="_blank" style="display:none">Déjanos también una reseña en Google ⭐</a>
   </div>
 </div>
@@ -80,7 +80,7 @@
   if (resena && !/^https:\/\/(g\.page|search\.google\.com|maps\.app\.goo\.gl|www\.google\.com|goo\.gl)\//.test(resena)) resena = null;
   if (resena) { const a = document.getElementById('resena'); a.href = resena; a.style.display = 'inline-block'; }
 
-  // Interruptor a distancia: si Jorge apago este servicio, la encuesta se bloquea sola.
+  // Interruptor a distancia: si Jorge apagó este servicio, la encuesta se bloquea sola.
   fetch('../estado.json?v=' + Date.now()).then(r => r.ok ? r.json() : null).then(e => {
     const base = rest.replace(/-[0-9a-f]{6}$/, '');
     const st = e && (e[rest] || e[base]);

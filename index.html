@@ -3,47 +3,77 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Resumen Semanal — para restaurantes de Lima</title>
-<meta name="description" content="Kit digital para restaurantes de Lima: resumen semanal de ventas por WhatsApp, encuesta QR con informe de opiniones y carta virtual con pedidos por WhatsApp. El primer resumen es gratis.">
+<meta name="color-scheme" content="light dark">
+<title>JESHARO — Tu negocio, en orden | Kit digital para restaurantes de Lima</title>
+<meta name="description" content="Kit digital para restaurantes de Lima: resumen semanal de ventas por WhatsApp, encuesta QR con informe de opiniones y carta virtual con pedidos por WhatsApp. 7 días de prueba gratis.">
+<link rel="icon" href="marca/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="marca/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="marca/apple-touch-icon.png">
+<meta name="theme-color" content="#14213D">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="JESHARO">
+<meta property="og:locale" content="es_PE">
+<meta property="og:title" content="JESHARO — Tu negocio, en orden">
+<meta property="og:description" content="Kit digital para restaurantes de Lima: resumen semanal de ventas por WhatsApp, encuesta QR con informe de opiniones y carta virtual con pedidos por WhatsApp. 7 días de prueba gratis.">
+<meta property="og:url" content="https://jesharo.com/">
+<meta property="og:image" content="https://jesharo.com/marca/compartir-1200x630.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Jesharo — Tu negocio, en orden.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="JESHARO — Tu negocio, en orden">
+<meta name="twitter:description" content="Kit digital para restaurantes de Lima: resumen semanal de ventas por WhatsApp, encuesta QR con informe de opiniones y carta virtual con pedidos por WhatsApp. 7 días de prueba gratis.">
+<meta name="twitter:image" content="https://jesharo.com/marca/compartir-1200x630.png">
 <style>
-  :root{--azul:#1d4ed8;--azul2:#2563eb;--tinta:#0f172a;--gris:#475569;--fondo:#f8fafc;--linea:#e2e8f0;--verde:#16a34a;--oro:#f59e0b}
-  *{box-sizing:border-box} body{margin:0;font-family:-apple-system,Inter,Segoe UI,Helvetica,Arial,sans-serif;color:var(--tinta);background:#fff;line-height:1.55}
+  :root{--azul:#1d4ed8;--azul2:#2563eb;--tinta:#0f172a;--gris:#475569;--fondo:#f8fafc;--linea:#e2e8f0;--verde:#16a34a;--oro:#f59e0b;--papel:#fff}
+  *{box-sizing:border-box} body{margin:0;font-family:-apple-system,Inter,Segoe UI,Helvetica,Arial,sans-serif;color:var(--tinta);background:var(--papel);line-height:1.55}
+  a{color:var(--azul)}
   .wrap{max-width:1000px;margin:0 auto;padding:0 20px}
-  header{padding:16px 0;border-bottom:1px solid var(--linea);position:sticky;top:0;background:#fff;z-index:5} header .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px}
+  header{padding:16px 0;border-bottom:1px solid var(--linea);position:sticky;top:0;background:var(--papel);z-index:5} header .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px}
   .marca{font-weight:800;letter-spacing:-.01em} .marca span{color:var(--azul)}
   .btn{display:inline-block;background:var(--verde);color:#fff;text-decoration:none;font-weight:700;padding:12px 20px;border-radius:12px;box-shadow:0 8px 24px rgba(22,163,74,.25)}
-  .btn.sec{background:#fff;color:var(--azul);border:2px solid var(--azul);box-shadow:none}
+  .btn.sec{background:var(--papel);color:var(--azul);border:2px solid var(--azul);box-shadow:none}
   .hero{padding:52px 0 26px} .hero h1{font-size:clamp(28px,5vw,44px);line-height:1.12;margin:0 0 14px;letter-spacing:-.02em}
   .hero p.lead{font-size:18px;color:var(--gris);max-width:680px;margin:0 0 22px}
   .gratis{display:inline-block;background:#fef3c7;color:#92400e;font-weight:700;border-radius:999px;padding:6px 12px;font-size:13px;margin-bottom:14px}
   section{padding:34px 0} h2{font-size:26px;margin:0 0 6px;letter-spacing:-.01em} .sub{color:var(--gris);margin:0 0 18px}
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
   .card{border:1px solid var(--linea);border-radius:16px;padding:20px;background:var(--fondo);display:flex;flex-direction:column}
+  .card.piloto{border-style:dashed;border-width:2px}
   .card .tag{font-size:12px;color:var(--azul);font-weight:800;letter-spacing:.06em;text-transform:uppercase} .card h3{margin:6px 0 6px;font-size:19px} .card p{margin:0 0 10px;color:var(--gris);font-size:15px}
   .card ul{margin:0 0 12px;padding-left:18px;color:var(--gris);font-size:14px} .card li{margin:3px 0}
   .precio{font-size:22px;font-weight:800;color:var(--azul);margin-top:auto} .precio small{font-size:13px;color:var(--gris);font-weight:600}
-  .demo{font-size:13px;margin-top:8px} .demo a{color:var(--azul);font-weight:700}
+  .demo{font-size:13px;margin-top:8px;color:var(--gris)} .demo a{color:var(--azul);font-weight:700}
   .paq{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
-  .p{border:2px solid var(--linea);border-radius:18px;padding:22px;background:#fff} .p.top{border-color:var(--azul);position:relative} .p.top::before{content:"El más pedido";position:absolute;top:-12px;left:18px;background:var(--azul);color:#fff;font-size:12px;font-weight:800;padding:3px 10px;border-radius:999px}
+  .p{border:2px solid var(--linea);border-radius:18px;padding:22px;background:var(--papel)} .p.top{border-color:var(--azul);position:relative} .p.top::before{content:"El más pedido";position:absolute;top:-12px;left:18px;background:#1d4ed8;color:#fff;font-size:12px;font-weight:800;padding:3px 10px;border-radius:999px}
   .p .n{font-size:32px;font-weight:800;color:var(--azul)} .p .n small{font-size:14px;color:var(--gris)} .p .t{font-weight:800;font-size:18px;margin:4px 0} .p ul{padding-left:18px;color:var(--gris);font-size:14px;margin:8px 0 0}
-  .nota{background:#eff6ff;border:1px solid #bfdbfe;border-radius:14px;padding:16px 18px;margin-top:18px;color:#1e3a8a;font-size:15px}
+  .nota{background:#eff6ff;border:1px solid #bfdbfe;border-radius:14px;padding:16px 18px;margin-top:18px;color:#1e3a8a;font-size:15px} .nota a{color:inherit;font-weight:700}
   .dos{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
-  .captura{border:1px solid var(--linea);border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(15,23,42,.12)} .captura img{display:block;width:100%}
+  .captura{border:1px solid var(--linea);border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(15,23,42,.12)} .captura img{display:block;width:100%;height:auto}
   .faq details{border-bottom:1px solid var(--linea);padding:10px 0} summary{font-weight:700;cursor:pointer}
-  footer{padding:30px 0;color:var(--gris);font-size:13px;border-top:1px solid var(--linea)}
+  footer{padding:30px 0;color:var(--gris);font-size:13px;border-top:1px solid var(--linea)} footer a{color:var(--azul)}
   .flotante{position:fixed;right:16px;bottom:16px;z-index:9}
   @media (max-width:600px){.hero{padding:34px 0 20px} header .btn{padding:8px 12px;font-size:13px;border-radius:10px} body{padding-bottom:72px} .btn.sec{margin-top:10px}}
+  @media (prefers-color-scheme:dark){
+    header{background:#14213D;border-bottom-color:#24324a}
+    :root{--azul:#60a5fa;--tinta:#e2e8f0;--gris:#9fb0c6;--fondo:#111a2b;--linea:#24324a;--papel:#0b1220}
+    .gratis{background:#3a2a06;color:#fcd34d}
+    .nota{background:#0f1e3a;border-color:#1e3a8a;color:#cfe0ff}
+    .captura{box-shadow:none}
+  }
+  .logo{display:inline-flex;align-items:center;line-height:0;border-radius:6px;flex:none} .logo img{display:block;height:34px;width:auto;max-width:100%} .logo:focus-visible{outline:2px solid var(--azul);outline-offset:3px}
+  @media (max-width:600px){.logo img{height:30px}}
 </style>
 </head>
 <body>
-<header><div class="wrap"><div class="marca">Resumen<span>·</span>Semanal</div><a class="btn" href="https://wa.me/51956849763?text=Hola%20Jorge%2C%20quiero%20mi%20resumen%20semanal%20gratis" target="_blank">Pedir mi resumen gratis</a></div></header>
+<header><div class="wrap"><a class="logo" href="./" aria-label="Jesharo, ir al inicio"><picture><source media="(prefers-color-scheme: dark)" srcset="marca/logo-horizontal-oscuro.svg"><img src="marca/logo-horizontal.svg" alt="Jesharo" width="158" height="34"></picture></a><a class="btn" href="https://wa.me/51956849763?text=Hola%20Jorge%2C%20quiero%20mi%20resumen%20semanal%20gratis" target="_blank" rel="noopener">Pedir mi resumen gratis</a></div></header>
 
 <section class="hero"><div class="wrap">
-  <div class="gratis">Prueba de 30 días GRATIS · si no te sirve, se apaga y no debes nada</div>
+  <div class="gratis">Prueba de 7 días GRATIS · si no te sirve, se apaga y no debes nada</div>
   <h1>Cada lunes sabes qué vender más esta semana, con las ventas que ya tienes en caja y Rappi</h1>
-  <p class="lead">Me mandas el reporte que ya usas (caja, Rappi, PedidosYa o Yape). El lunes recibes por WhatsApp una hoja clara: <b>ventas por canal, platos que caen, horas fuertes y 3 decisiones para vender mejor esa semana</b>. Si quieres, sumas un <b>QR en la mesa</b> para que tus clientes te califiquen y tu <b>carta digital</b> con pedidos directo a tu WhatsApp. Sin instalar sistema, sin compartir claves, sin contrato. Pago por Yape.</p>
+  <p class="lead">Me mandas el reporte que ya usas (caja, Rappi, PedidosYa o Yape). El lunes recibes por WhatsApp una hoja clara: <b>ventas por canal, platos que caen, horas fuertes y 3 decisiones para vender mejor esa semana</b>. Si quieres, sumas un <b>QR en la mesa</b> para que tus clientes te califiquen y tu <b>carta digital</b> con pedidos directo a tu WhatsApp. Sin instalar sistema, sin darme las claves de tu caja ni de tus apps, sin contrato. Pagas por Yape o Plin.</p>
   <a class="btn" href="planes/">Ver todo y activarlo</a>
-  &nbsp; <a class="btn sec" href="reporte-demo.pdf" target="_blank">Ver un resumen de ejemplo (PDF)</a>
+  &nbsp; <a class="btn sec" href="reporte-demo.pdf" target="_blank" rel="noopener">Ver un resumen de ejemplo (PDF)</a>
 </div></section>
 
 <section id="modulos"><div class="wrap">
@@ -52,19 +82,20 @@
   <div class="grid">
     <div class="card"><div class="tag">Módulo 1</div><h3>Resumen semanal de ventas</h3><p>Me mandas el Excel de tu caja o el archivo que exportas de Rappi, PedidosYa o Yape. Cada lunes, un PDF por WhatsApp.</p>
       <ul><li>Ventas vs. semana anterior y por canal</li><li>Productos que suben y bajan</li><li>Días y horas fuertes, ticket promedio</li><li>Cancelaciones y descuentos por canal (para ver qué no cuadra entre Rappi y caja)</li><li>3 acciones concretas para la semana</li></ul>
-      <div class="precio">S/ 99 <small>/ mes (1 fuente)</small> · S/ 179 <small>/ mes (varias fuentes o 2+ locales)</small></div><div class="demo"><a href="reporte-demo.pdf" target="_blank">Ver ejemplo →</a></div></div>
+      <div class="precio">S/&nbsp;99 <small>/ mes (1 fuente)</small> · S/&nbsp;179 <small>/ mes (varias fuentes o 2+ locales)</small></div><div class="demo"><a href="reporte-demo.pdf" target="_blank" rel="noopener">Ver ejemplo →</a></div></div>
     <div class="card"><div class="tag">Módulo 2</div><h3>Encuesta QR + informe de opiniones</h3><p>Un cartel con QR en la mesa o en la caja. El cliente califica en 30 segundos desde su celular. Cada mes recibes el informe: notas, comentarios y qué mejorar primero.</p>
-      <ul><li>Calificación general, comida, atención y tiempo de espera</li><li>Comentarios escritos y alerta cuando una nota baja</li><li>Opción de dejar WhatsApp para responderle</li><li>Cartel A5 listo para imprimir</li></ul>
-      <div class="precio">S/ 79 <small>instalación única</small> + S/ 49 <small>/ mes con informe mensual</small></div><div class="demo"><a href="encuesta/?r=demo&n=Restaurante%20Demo" target="_blank">Probar la encuesta →</a> · <a href="opiniones-demo.pdf" target="_blank">Ver informe de ejemplo →</a></div></div>
-    <div class="card"><div class="tag">Módulo 3</div><h3>Carta virtual con pedidos por WhatsApp</h3><p>Tu carta en una página con QR. El cliente elige, suma y el pedido le llega a tu WhatsApp ya escrito. Cambios de precio o platos agotados el mismo día.</p>
-      <ul><li>Categorías, descripciones y precios</li><li>Botón "Pedir por WhatsApp" con el pedido armado</li><li>Sin comisiones por pedido</li><li>QR para mesa, delivery e Instagram</li></ul>
-      <div class="precio">S/ 149 <small>instalación única</small> + S/ 29 <small>/ mes (cambios ilimitados)</small></div><div class="demo"><a href="carta/demo/" target="_blank">Ver la carta demo →</a></div></div>
+      <ul><li>Calificación general, comida, atención y tiempo de espera</li><li>Comentarios escritos y aviso en el informe cuando una nota baja</li><li>Opción de dejar su WhatsApp para que le respondas</li><li>Al final, invitación a dejarte reseña en Google</li><li>Cartel A5 listo para imprimir</li></ul>
+      <div class="precio">S/&nbsp;79 <small>instalación única</small> + S/&nbsp;49 <small>/ mes con informe mensual</small></div><div class="demo"><a href="encuesta/?r=demo&amp;n=Restaurante%20Demo" target="_blank" rel="noopener">Probar la encuesta →</a> · <a href="opiniones-demo.pdf" target="_blank" rel="noopener">Ver informe de ejemplo →</a></div></div>
+    <div class="card"><div class="tag">Módulo 3</div><h3>Carta virtual con pedidos por WhatsApp</h3><p>Tu carta en una página con un QR que no cambia nunca. El cliente elige, suma y el pedido le llega a tu WhatsApp ya escrito. Tú mismo cambias precios o fotos y marcas un plato agotado desde tu celular, o me lo pides por WhatsApp.</p>
+      <ul><li>Categorías, fotos, descripciones y precios</li><li>Botón "Pedir por WhatsApp" con el pedido armado</li><li>Sin comisiones por pedido</li><li>QR para mesa, delivery e Instagram, y versión para imprimir</li></ul>
+      <div class="precio">S/&nbsp;149 <small>instalación única</small> + S/&nbsp;39 <small>/ mes (cambios ilimitados)</small></div><div class="demo"><b>S/&nbsp;39 es precio de lanzamiento para los primeros 10 negocios.</b> <a href="https://jesharo.com/c/demo-sabor-criollo" target="_blank" rel="noopener">Ver la carta demo →</a> · <a href="https://jesharo.com/c/demo-sabor-criollo/pdf" target="_blank" rel="noopener">Versión para imprimir →</a></div></div>
     <div class="card"><div class="tag">Módulo 4</div><h3>Control de margen por plato</h3><p>Llenas una vez el costo de cada plato. Cada mes te digo cuánto deja cada uno y qué hacer: subir precio, promocionar, mantener o retirar.</p>
       <ul><li>Margen y aporte en soles, plato por plato</li><li>Mapa: ⭐ estrellas, 🐄 caballitos, ❓ promesas, 🐢 lastres</li><li>Precio sugerido cuando conviene subirlo</li><li>Requiere el resumen semanal (usa esas ventas)</li></ul>
-      <div class="precio">S/ 149 <small>armado de tu hoja de costos</small> + S/ 49 <small>/ mes</small></div><div class="demo"><a href="margen-demo.pdf" target="_blank">Ver informe de ejemplo (PDF) →</a></div></div>
-    <div class="card"><div class="tag">Módulo 5 · a cotizar</div><h3>Asistente que atiende llamadas y toma pedidos</h3><p>Una voz natural que contesta tu número, toma el pedido, pregunta recojo o delivery y lo confirma por WhatsApp. Varias llamadas a la vez en hora punta.</p>
-      <ul><li>Para restaurantes con más de 50 pedidos al día</li><li>Instalación y prueba con tu carta real</li><li>Costo de plataforma incluido</li></ul>
-      <div class="precio">desde S/ 449 <small>/ mes + instalación</small></div><div class="demo">Se activa cuando tu volumen lo justifique; te lo cotizo con tus números.</div></div>
+      <div class="precio">S/&nbsp;149 <small>armado de tu hoja de costos</small> + S/&nbsp;49 <small>/ mes</small></div><div class="demo"><a href="margen-demo.pdf" target="_blank" rel="noopener">Ver informe de ejemplo (PDF) →</a></div></div>
+    <div class="card piloto"><div class="tag">Módulo 5 · piloto con cupos limitados</div><h3>Asistente de hora punta para tus llamadas</h3><p>Es como tener una persona más contestando el teléfono de tu local: cuando tu línea está ocupada o nadie alcanza a contestar, un asistente virtual atiende, toma el pedido con tu carta, lo lee de vuelta con el total y te lo manda a una pantalla y a tu WhatsApp con la grabación. Tu número no cambia.</p>
+      <ul><li>Se presenta como asistente virtual y avisa que la llamada se graba</li><li>Si el cliente pide hablar con una persona, te pasa la llamada</li><li>Solo ofrece lo que está en tu carta; el total lo calcula el sistema</li><li>No cobra con tarjeta, no atiende reclamos y no se conecta a tu caja</li><li>Pensado para pollerías y chifas con delivery que pierden llamadas en hora punta</li></ul>
+      <div class="precio">S/&nbsp;449 <small>/ mes por cada local instalado</small></div>
+      <div class="demo">Se cobra <b>por local</b>, y cada local incluye un uso justo de hasta ~1,000 minutos al mes (unas 330 llamadas de 3 minutos). Instalación S/&nbsp;299 por local, <b>gratis para los 2 o 3 primeros pilotos</b>. <b>Prueba de 1 día</b>: cuenta desde que tu línea queda conectada; si no te sirve, la desconecto y no me debes nada (los otros servicios tienen 7 días). Hoy es una demo que te muestro en persona con tu carta; se conecta a tu número cuando aceptas el piloto. El desvío de llamadas lo activa tu operador y su costo depende de tu plan. <a href="https://wa.me/51956849763?text=Hola%20Jorge%2C%20me%20interesa%20un%20cupo%20del%20piloto%20del%20asistente%20de%20llamadas" target="_blank" rel="noopener">Pedir un cupo del piloto →</a></div></div>
   </div>
 </div></section>
 
@@ -72,14 +103,14 @@
   <h2>Paquetes (dos tallas, según cuánta gente tiene tu restaurante)</h2>
   <p class="sub">Restaurante <b>pequeño</b>: hasta ~40 pedidos al día o un solo local. Restaurante <b>con mucha gente</b>: más de 40 pedidos al día, varios canales o 2+ locales.</p>
   <div class="paq">
-    <div class="p top"><div class="n">S/ 139 <small>/ mes de lanzamiento</small></div><div class="t">Kit Pequeño · ventas + opiniones + carta</div>
-      <ul><li>Resumen semanal (1 fuente)</li><li>Encuesta QR con informe mensual</li><li>Carta virtual con cambios ilimitados</li><li>Instalación de todo: S/ 149 (en vez de S/ 228)</li></ul>
-      <p style="margin:10px 0 0;color:var(--gris);font-size:14px">Precio normal S/ 169/mes. Por separado costaría S/ 177/mes + S/ 228 de instalación.</p></div>
-    <div class="p"><div class="n">S/ 199 <small>/ mes de lanzamiento</small></div><div class="t">Kit con mucha gente · todo, multicanal</div>
-      <ul><li>Resumen completo (caja + Rappi + PedidosYa + Yape, 2+ locales)</li><li>Encuesta QR con informe quincenal</li><li>Carta virtual + QR por local</li><li>Instalación de todo: S/ 199</li><li>Prioridad para el módulo 5 (asistente de voz)</li></ul>
-      <p style="margin:10px 0 0;color:var(--gris);font-size:14px">Precio normal S/ 249/mes. Por separado costaría S/ 257/mes + S/ 228 de instalación.</p></div>
+    <div class="p top"><div class="n">S/&nbsp;139 <small>/ mes de lanzamiento</small></div><div class="t">Kit Pequeño · ventas + opiniones + carta</div>
+      <ul><li>Resumen semanal (1 fuente)</li><li>Encuesta QR con informe mensual</li><li>Carta virtual con cambios ilimitados</li><li>Instalación de todo: S/&nbsp;149 (en vez de S/&nbsp;228)</li></ul>
+      <p style="margin:10px 0 0;color:var(--gris);font-size:14px">Precio normal S/&nbsp;169/mes. Por separado costaría S/&nbsp;187/mes + S/&nbsp;228 de instalación.</p></div>
+    <div class="p"><div class="n">S/&nbsp;199 <small>/ mes de lanzamiento</small></div><div class="t">Kit con mucha gente · todo, multicanal</div>
+      <ul><li>Resumen completo (caja + Rappi + PedidosYa + Yape, 2+ locales)</li><li>Encuesta QR con informe quincenal</li><li>Carta virtual + QR por local</li><li>Instalación de todo: S/&nbsp;199 (en vez de S/&nbsp;228)</li><li>Prioridad para el piloto del asistente de llamadas (se contrata y se paga aparte, por local)</li></ul>
+      <p style="margin:10px 0 0;color:var(--gris);font-size:14px">Precio normal S/&nbsp;249/mes. Por separado costaría S/&nbsp;267/mes + S/&nbsp;228 de instalación.</p></div>
   </div>
-  <div class="nota"><b>Prueba de 30 días y precio de lanzamiento, por escrito:</b> instalo lo que elijas y lo usas 30 días sin pagar; si no te sirvió, lo apago y no me debes nada. Los primeros 10 restaurantes pagan el precio de lanzamiento durante 3 meses (S/ 139 o S/ 199). Al cuarto mes revisamos juntos tus ventas: <b>si subieron, pasas al precio normal (S/ 169 o S/ 249); si no subieron, sigues pagando el de lanzamiento</b>. Sin contrato: cancelas antes del mes siguiente y listo. Ganamos si tú ganas.</div>
+  <div class="nota"><b>Prueba de 7 días y precio de lanzamiento, por escrito:</b> instalo lo que elijas y lo usas 7 días sin pagar; si no te sirvió, lo apago y no me debes nada. Si te sirvió, pagas la instalación y el primer mes por adelantado. Los primeros 10 restaurantes pagan el precio de lanzamiento durante 3 meses (S/&nbsp;139 o S/&nbsp;199). Al cuarto mes revisamos juntos tus ventas: <b>si subieron, pasas al precio normal (S/&nbsp;169 o S/&nbsp;249); si no subieron, sigues pagando el de lanzamiento</b>. Sin contrato: te das de baja cuando quieras y no se te cobra el mes siguiente. El asistente de llamadas es la única excepción: su prueba es de 1 día (módulo 5). Todo está en los <a href="terminos/">términos del servicio</a>. Ganamos si tú ganas.</div>
 </div></section>
 
 <section><div class="wrap">
@@ -95,7 +126,7 @@
 <section><div class="wrap">
   <h2>Así se ve</h2>
   <div class="dos">
-    <div><video src="demo-45s.mp4" controls muted playsinline style="width:100%;max-width:420px;border-radius:16px;display:block;margin:0 auto 12px;box-shadow:0 20px 60px rgba(15,23,42,.15)"></video></div>
+    <div><video src="demo-45s.mp4" controls muted playsinline preload="metadata" style="width:100%;max-width:420px;border-radius:16px;display:block;margin:0 auto 12px;box-shadow:0 20px 60px rgba(15,23,42,.15)"></video></div>
     <div class="captura"><img src="captura-reporte.png" alt="Ejemplo del resumen semanal: indicadores, alertas, ventas por día y por canal, top de productos"></div>
   </div>
 </div></section>
@@ -103,14 +134,15 @@
 <section class="faq"><div class="wrap">
   <h2>Preguntas frecuentes</h2>
   <details><summary>¿Tengo que instalar algo o cambiar de sistema?</summary>No. Todo funciona con lo que ya tienes: tu caja, tus apps de delivery, tu WhatsApp. Los QR se imprimen y listo.</details>
-  <details><summary>¿Mis datos y los de mis clientes están seguros?</summary>Sí. Nunca te pido claves ni accesos a tus sistemas: solo el archivo de ventas. Las opiniones de tus clientes son anónimas salvo que ellos dejen su WhatsApp, y solo tú las ves. No se comparten con nadie y se borran cuando lo pidas.</details>
+  <details><summary>¿Cómo funciona la prueba de 7 días?</summary>Instalo lo que elijas y lo usas 7 días sin pagar nada. Si no te sirvió, lo apago y no me debes nada. Si te sirvió, pagas la instalación y el primer mes, y sigue funcionando sin cortes. Los pagos son mensuales y por adelantado. El asistente de llamadas es distinto: tiene 1 día de prueba, que cuenta desde que tu línea queda conectada.</details>
+  <details><summary>¿Mis datos y los de mis clientes están seguros?</summary>Nunca te pido las claves de tu caja ni de tus apps: solo el archivo de ventas. Las opiniones de tus clientes son anónimas salvo que ellos dejen su WhatsApp, y las vemos tú y yo (yo preparo tu informe). No se venden ni se comparten con otros negocios, y se borran cuando lo pidas. Todo el detalle, incluido dónde se guarda cada cosa, está en la <a href="privacidad/">política de privacidad</a>.</details>
   <details><summary>¿Cobran comisión por pedido?</summary>No. Los pedidos por la carta virtual van directo a tu WhatsApp, sin intermediarios ni comisiones. Solo pagas el plan.</details>
   <details><summary>¿Es contabilidad o algo de la SUNAT?</summary>No. Es información para decidir mejor: qué comprar, qué promocionar, qué días y horas reforzar, qué mejorar según tus clientes.</details>
   <details><summary>¿Sirve si solo vendo por delivery (dark kitchen)?</summary>Sí, es de los casos donde más sirve: juntamos Rappi + PedidosYa + WhatsApp en un solo resumen y la encuesta va por el enlace en el empaque o en el mensaje de entrega.</details>
   <details><summary>¿Quién está detrás?</summary>Jorge Chávez, estudiante de Ingeniería Industrial en la UPC (Lima). Uso herramientas de análisis de datos para que un restaurante pequeño tenga la información que antes solo tenían las cadenas grandes. Escríbeme por WhatsApp: respondo yo.</details>
 </div></section>
 
-<footer><div class="wrap">Resumen·Semanal — Lima, Perú · <a href="https://wa.me/51956849763">WhatsApp +51 956 849 763</a> · Hecho por Jorge Chávez · <a href="barberias/">¿Tienes una barbería o peluquería? Mira esto</a></div></footer>
-<a class="btn flotante" href="https://wa.me/51956849763?text=Hola%20Jorge%2C%20quiero%20mi%20resumen%20semanal%20gratis" target="_blank">💬 WhatsApp</a>
+<footer><div class="wrap">JESHARO — Tu negocio, en orden. Lima, Perú · <a href="https://wa.me/51956849763" target="_blank" rel="noopener">WhatsApp +51 956 849 763</a> · Hecho por Jorge Chávez · <a href="barberias/">¿Tienes una barbería o peluquería? Mira esto</a> · <a href="terminos/">Términos del servicio</a> · <a href="privacidad/">Privacidad</a></div></footer>
+<a class="btn flotante" href="https://wa.me/51956849763?text=Hola%20Jorge%2C%20quiero%20mi%20resumen%20semanal%20gratis" target="_blank" rel="noopener">💬 WhatsApp</a>
 </body>
 </html>

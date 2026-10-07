@@ -67,7 +67,8 @@ let diaElegido=null;
     b.onclick=()=>{ [...cont.children].forEach(x=>x.classList.remove('on')); b.classList.add('on'); diaElegido=b.dataset.txt; pintar(); };
     cont.appendChild(b);
   }
-  if(cont.firstChild) cont.firstChild.click();
+  // pintar() se define en el script de abajo: se elige el primer día cuando la página terminó de cargar.
+  document.addEventListener('DOMContentLoaded',function(){ if(cont.firstChild) cont.firstChild.click(); });
 })();
 </script><p class="pie">Precios en soles. La reserva se confirma por WhatsApp. Barbería El Corte (demo).</p></main>
 <div id="suspendido" style="display:none;position:fixed;inset:0;background:#0f172a;color:#fff;z-index:99;
